@@ -1,0 +1,65 @@
+# ---------------------------------------------------------------
+# Secrets - NEVER commit the real .env (it holds the Groq API key).
+# The template .env.example is kept.
+# ---------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ---------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------
+# Node / frontend
+# ---------------------------------------------------------------
+node_modules/
+frontend/dist/
+npm-debug.log*
+
+# ---------------------------------------------------------------
+# Generated at run time (re-created automatically)
+# ---------------------------------------------------------------
+# downloaded PDFs (~190 MB)
+paper_cache/
+logs/
+*.log
+# one folder per generated review
+experiments/
+benchmark/_openalex_cache.json
+
+# Evaluation suite: large downloaded / cached data
+MALRG_Evaluation_Suite/data/pdfs/
+MALRG_Evaluation_Suite/cache/
+MALRG_Evaluation_Suite/logs/
+
+# ---------------------------------------------------------------
+# Local tool settings, old backups and scratch files
+# ---------------------------------------------------------------
+.claude/
+archive/
+*.quota_backup
+*.orig
+*.bak
+~$*
+
+# Reports, literature review, references and presentation decks are not source code.
+# Keep them locally (or submit them separately); do not publish them in the repository.
+*.docx
+*.doc
+*.pdf
+*.pptx
+*.ppt
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

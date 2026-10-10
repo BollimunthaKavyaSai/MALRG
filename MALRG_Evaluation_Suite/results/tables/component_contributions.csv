@@ -1,0 +1,66 @@
+component,metric,with,without,delta,ci,p
+Retrieval grounding (M1 vs M0),citation_groundedness,M1,M0,0.150077985571659,"(0.04888674217546711, 0.26295204131523786)",0.01953125
+Retrieval grounding (M1 vs M0),citation_precision,M1,M0,0.16165614940614942,"(0.05311114926739928, 0.2879908258408258)",0.009765625
+Retrieval grounding (M1 vs M0),hallucination_rate,M1,M0,-0.04078741703768204,"(-0.13346196707743233, 0.03426968629326329)",0.921875
+Retrieval grounding (M1 vs M0),fabricated_reference_rate,M1,M0,-0.46893939393939393,"(-0.6481060606060606, -0.25)",0.03125
+Retrieval grounding (M1 vs M0),source_coverage,M1,M0,0.9800000000000001,"(0.9400000000000001, 1.0)",0.001953125
+Retrieval grounding (M1 vs M0),multi_source_synthesis,M1,M0,0.12738648561471283,"(0.08530338900174174, 0.17088039830676788)",0.00390625
+Retrieval grounding (M1 vs M0),cross_paper_comparison,M1,M0,0.021312606463499736,"(0.01027514600908501, 0.03387238760244618)",0.015625
+Retrieval grounding (M1 vs M0),judge_gap_precision,M1,M0,0.465,"(0.06499999999999999, 0.8149999999999998)",0.04296875
+Retrieval grounding (M1 vs M0),judge_overall,M1,M0,3.233333333333333,"(2.2833333333333328, 4.116666666666666)",0.001953125
+Retrieval grounding (M1 vs M0),overall_quality_index,M1,M0,0.28311350470377533,"(0.2094842715329785, 0.35361292912325054)",0.001953125
+Retrieval grounding (M1 vs M0),judge_synthesis,M1,M0,5.2,"(4.3, 6.1)",0.001953125
+Retrieval grounding (M1 vs M0),judge_gap_quality,M1,M0,2.8,"(0.8, 4.5)",0.033203125
+Retrieval grounding (M1 vs M0),judge_critical_analysis,M1,M0,3.4,"(2.4, 4.3)",0.001953125
+Evidence analysis + gap triad (M2 vs M1),citation_groundedness,M2,M1,0.0322957523885307,"(-0.07533585858585856, 0.12933926089297101)",0.556640625
+Evidence analysis + gap triad (M2 vs M1),citation_precision,M2,M1,0.016394145126903743,"(-0.08974918995478208, 0.11205577682551354)",0.76953125
+Evidence analysis + gap triad (M2 vs M1),hallucination_rate,M2,M1,-0.06888155908641778,"(-0.14099406736359638, -0.0015697922073696301)",0.10546875
+Evidence analysis + gap triad (M2 vs M1),fabricated_reference_rate,M2,M1,0.0,"(0.0, 0.0)",1.0
+Evidence analysis + gap triad (M2 vs M1),source_coverage,M2,M1,0.019999999999999997,"(0.0, 0.059999999999999984)",1.0
+Evidence analysis + gap triad (M2 vs M1),multi_source_synthesis,M2,M1,-0.038175766808086105,"(-0.10026809193763866, 0.026943439277104637)",0.375
+Evidence analysis + gap triad (M2 vs M1),cross_paper_comparison,M2,M1,-0.0002168740614148748,"(-0.017493173142147142, 0.018823957723939418)",1.0
+Evidence analysis + gap triad (M2 vs M1),judge_gap_precision,M2,M1,0.16,"(-0.18, 0.4600000000000001)",0.375
+Evidence analysis + gap triad (M2 vs M1),judge_overall,M2,M1,0.7999999999999999,"(-0.2666666666666668, 1.9666666666666668)",0.23828125
+Evidence analysis + gap triad (M2 vs M1),overall_quality_index,M2,M1,0.04659112789088744,"(0.0008589121200791376, 0.09821351115844214)",0.16015625
+Evidence analysis + gap triad (M2 vs M1),judge_synthesis,M2,M1,0.1,"(-0.7, 1.0)",0.9375
+Evidence analysis + gap triad (M2 vs M1),judge_gap_quality,M2,M1,1.6,"(0.0, 3.6)",0.2109375
+Evidence analysis + gap triad (M2 vs M1),judge_critical_analysis,M2,M1,0.3,"(-0.6, 1.3)",0.5
+Cross-paper synthesis (M4 vs M2),citation_groundedness,M4,M2,-0.017390224249559293,"(-0.10895238831808528, 0.08549693329901127)",0.556640625
+Cross-paper synthesis (M4 vs M2),citation_precision,M4,M2,-0.024447687440870922,"(-0.1116620786875131, 0.07072989619180227)",0.625
+Cross-paper synthesis (M4 vs M2),hallucination_rate,M4,M2,0.012049719474692012,"(-0.04457588573193599, 0.07006539896245777)",0.6953125
+Cross-paper synthesis (M4 vs M2),fabricated_reference_rate,M4,M2,0.0,"(0.0, 0.0)",1.0
+Cross-paper synthesis (M4 vs M2),source_coverage,M4,M2,-0.019999999999999997,"(-0.059999999999999984, 0.0)",1.0
+Cross-paper synthesis (M4 vs M2),multi_source_synthesis,M4,M2,0.1165187027380122,"(0.02011710916250558, 0.2070643768706428)",0.064453125
+Cross-paper synthesis (M4 vs M2),cross_paper_comparison,M4,M2,0.007010062991867303,"(-0.016029612615564116, 0.029271290276384563)",0.734375
+Cross-paper synthesis (M4 vs M2),judge_gap_precision,M4,M2,0.1,"(-0.13999999999999999, 0.39)",0.71875
+Cross-paper synthesis (M4 vs M2),judge_overall,M4,M2,0.19999999999999982,"(-0.1833333333333333, 0.6333333333333335)",0.6875
+Cross-paper synthesis (M4 vs M2),overall_quality_index,M4,M2,0.01824555061327791,"(-0.03348559128401016, 0.0745274347812822)",0.6953125
+Cross-paper synthesis (M4 vs M2),judge_synthesis,M4,M2,0.4,"(0.0, 0.9)",0.25
+Cross-paper synthesis (M4 vs M2),judge_gap_quality,M4,M2,0.3,"(-0.3, 1.0)",0.4375
+Cross-paper synthesis (M4 vs M2),judge_critical_analysis,M4,M2,0.3,"(0.0, 0.8)",0.5
+Adversarial gap verification (M4 vs M3),citation_groundedness,M4,M3,-0.017867901993077317,"(-0.06201027475913523, 0.03323403498675235)",0.431640625
+Adversarial gap verification (M4 vs M3),citation_precision,M4,M3,0.014203142542354419,"(-0.02674382065241563, 0.059919226488266586)",0.845703125
+Adversarial gap verification (M4 vs M3),hallucination_rate,M4,M3,0.027327544720657838,"(-0.03509948785920794, 0.08831515772073048)",0.375
+Adversarial gap verification (M4 vs M3),fabricated_reference_rate,M4,M3,0.0,"(0.0, 0.0)",1.0
+Adversarial gap verification (M4 vs M3),source_coverage,M4,M3,0.12000000000000002,"(0.0, 0.28)",0.5
+Adversarial gap verification (M4 vs M3),multi_source_synthesis,M4,M3,-0.08100428829390961,"(-0.17296935525612767, 0.010984384776241323)",0.193359375
+Adversarial gap verification (M4 vs M3),cross_paper_comparison,M4,M3,0.0045780751271014605,"(-0.016748681547556488, 0.028352938021494835)",0.84375
+Adversarial gap verification (M4 vs M3),judge_gap_precision,M4,M3,0.03333333333333335,"(-0.13333333333333333, 0.2166666666666667)",0.75
+Adversarial gap verification (M4 vs M3),judge_overall,M4,M3,0.23333333333333303,"(-0.18333333333333374, 0.7)",0.578125
+Adversarial gap verification (M4 vs M3),overall_quality_index,M4,M3,0.006000425941838694,"(-0.026263027686738993, 0.04318783439080819)",0.76953125
+Adversarial gap verification (M4 vs M3),judge_synthesis,M4,M3,0.6,"(0.1, 1.1)",0.125
+Adversarial gap verification (M4 vs M3),judge_gap_quality,M4,M3,0.4,"(-0.1, 1.0)",0.375
+Adversarial gap verification (M4 vs M3),judge_critical_analysis,M4,M3,0.5,"(0.0, 1.0)",0.25
+Verification-guided feedback (M5 vs M4),citation_groundedness,M5,M4,0.2707287143777587,"(0.19175874813679364, 0.35567529838022155)",0.001953125
+Verification-guided feedback (M5 vs M4),citation_precision,M5,M4,0.25028299586695013,"(0.1785678642157301, 0.32509635147054433)",0.001953125
+Verification-guided feedback (M5 vs M4),hallucination_rate,M5,M4,-0.13722112812801812,"(-0.17366960481420995, -0.10264088227349691)",0.001953125
+Verification-guided feedback (M5 vs M4),fabricated_reference_rate,M5,M4,0.0,"(0.0, 0.0)",1.0
+Verification-guided feedback (M5 vs M4),source_coverage,M5,M4,0.0,"(0.0, 0.0)",1.0
+Verification-guided feedback (M5 vs M4),multi_source_synthesis,M5,M4,-0.0008591739731529685,"(-0.04863989612823575, 0.054928875061463545)",0.76953125
+Verification-guided feedback (M5 vs M4),cross_paper_comparison,M5,M4,-0.006860068715192774,"(-0.017273478608541216, 0.0038016544990660565)",0.30078125
+Verification-guided feedback (M5 vs M4),judge_gap_precision,M5,M4,0.025,"(0.0, 0.075)",1.0
+Verification-guided feedback (M5 vs M4),judge_overall,M5,M4,-0.5166666666666664,"(-1.033333333333333, -0.04999999999999956)",0.1171875
+Verification-guided feedback (M5 vs M4),overall_quality_index,M5,M4,0.07883837471661344,"(0.058997195240063464, 0.10096938050334564)",0.001953125
+Verification-guided feedback (M5 vs M4),judge_synthesis,M5,M4,-0.8,"(-1.3, -0.4)",0.03125
+Verification-guided feedback (M5 vs M4),judge_gap_quality,M5,M4,-0.3,"(-0.8, 0.2)",0.5
+Verification-guided feedback (M5 vs M4),judge_critical_analysis,M5,M4,-0.7,"(-1.2, -0.2)",0.0625

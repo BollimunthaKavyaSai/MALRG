@@ -1,0 +1,45 @@
+/* MALRG – base styles. Visual design lives in Tailwind classes; this file only sets
+   typography, a few shared primitives and the print / PDF-export rules. */
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; margin: 0; }
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif-doc { font-family: var(--font-serif); }
+
+/* subtle scrollbars */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.35); border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* manuscript typography */
+.manuscript h1 { font-size: 1.6rem; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 1.25rem; }
+.manuscript h2 { font-size: 1.15rem; font-weight: 650; margin: 2rem 0 0.75rem; letter-spacing: -0.005em; }
+.manuscript h3 { font-size: 1rem; font-weight: 650; margin: 1.5rem 0 0.5rem; }
+.manuscript p { font-size: 1.02rem; line-height: 1.8; margin: 0 0 1rem; text-align: justify; }
+.manuscript li { font-size: 1rem; line-height: 1.7; }
+
+@keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+.pulse-soft { animation: pulse-soft 1.6s ease-in-out infinite; }
+
+/* ============================================================
+   PRINT / PDF EXPORT
+   ============================================================ */
+@media print {
+  body { background: #ffffff !important; color: #000000 !important; }
+  .app-header, .app-nav, aside, .no-print, .fixed, button { display: none !important; }
+  .app-main { display: block !important; max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  .app-workspace { border: none !important; box-shadow: none !important; background: transparent !important; }
+  .manuscript { max-width: 100% !important; padding: 0 !important; }
+  .manuscript p { color: #000000 !important; font-size: 11pt !important; line-height: 1.5 !important; }
+  .manuscript h1, .manuscript h2, .manuscript h3 { color: #000000 !important; page-break-after: avoid; }
+}

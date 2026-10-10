@@ -1,0 +1,20 @@
+{
+  "name": "malrg-node-backend",
+  "version": "1.0.0",
+  "description": "Node.js backend for MultiAgent Literature Review Generator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "seed": "node seed_corpus.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  },
+  "overrides": {
+    "qs": "^6.16.0"
+  }
+}
