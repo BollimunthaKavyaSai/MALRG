@@ -37,7 +37,11 @@
   },
   {
    "id": "M5",
-   "label": "M5: Full + Verification-Guided Feedback (Proposed)"
+   "label": "M5: Full MALRG (Proposed)"
+  },
+  {
+   "id": "M6",
+   "label": "M6: M5 + Claim Filter"
   }
  ],
  "metrics": [
@@ -943,148 +947,294 @@
   },
   "M5": {
    "overall_quality_index": {
-    "mean": 0.6484,
-    "std": 0.0442,
-    "ci_low": 0.6223,
-    "ci_high": 0.6743
+    "mean": 0.76,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "citation_groundedness": {
-    "mean": 0.4971,
-    "std": 0.1213,
-    "ci_low": 0.4263,
-    "ci_high": 0.5683
+    "mean": 0.75,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "citation_precision": {
-    "mean": 0.4587,
-    "std": 0.1215,
-    "ci_low": 0.387,
-    "ci_high": 0.5302
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "hallucination_rate": {
-    "mean": 0.5894,
-    "std": 0.0991,
-    "ci_low": 0.5366,
-    "ci_high": 0.6515
+    "mean": 0.4,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "fabricated_reference_rate": {
     "mean": 0.0,
-    "std": 0.0,
-    "ci_low": 0.0,
-    "ci_high": 0.0
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "source_coverage": {
-    "mean": 0.98,
-    "std": 0.0632,
-    "ci_low": 0.94,
-    "ci_high": 1.0
+    "mean": 1.0,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "multi_source_synthesis": {
-    "mean": 0.214,
-    "std": 0.1294,
-    "ci_low": 0.1373,
-    "ci_high": 0.2904
+    "mean": 0.4,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "judge_gap_precision": {
-    "mean": 0.905,
-    "std": 0.1707,
-    "ci_low": 0.8,
-    "ci_high": 1.0
+    "mean": 0.94,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "judge_overall": {
-    "mean": 7.3833,
-    "std": 1.0945,
-    "ci_low": 6.7,
-    "ci_high": 8.0
+    "mean": 8.5,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "cross_paper_comparison": {
     "mean": 0.0212,
-    "std": 0.0279,
-    "ci_low": 0.0081,
-    "ci_high": 0.0404
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "uncited_claim_rate": {
     "mean": 0.3822,
-    "std": 0.1108,
-    "ci_low": 0.3193,
-    "ci_high": 0.4483
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "judge_claim_support": {
     "mean": 0.4417,
-    "std": 0.1472,
-    "ci_low": 0.3583,
-    "ci_high": 0.525
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "judge_synthesis": {
     "mean": 8.0,
-    "std": 1.0541,
-    "ci_low": 7.4,
-    "ci_high": 8.6
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "judge_critical_analysis": {
     "mean": 7.1,
-    "std": 0.9944,
-    "ci_low": 6.5,
-    "ci_high": 7.6
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "judge_gap_quality": {
     "mean": 8.0,
-    "std": 0.9428,
-    "ci_low": 7.4,
-    "ci_high": 8.5
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "judge_faithfulness": {
     "mean": 5.1,
-    "std": 2.1318,
-    "ci_low": 4.0,
-    "ci_high": 6.5
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "structure_score": {
     "mean": 0.9833,
-    "std": 0.0527,
-    "ci_low": 0.95,
-    "ci_high": 1.0
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "synthesis_indicators_per_1k": {
     "mean": 11.4546,
-    "std": 2.8746,
-    "ci_low": 9.7738,
-    "ci_high": 13.1487
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "gap_indicators": {
     "mean": 3.9,
-    "std": 2.0248,
-    "ci_low": 2.6,
-    "ci_high": 5.0
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "certainty_flags": {
     "mean": 0.3,
-    "std": 0.9487,
-    "ci_low": 0.0,
-    "ci_high": 0.9
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "redundancy": {
     "mean": 0.0079,
-    "std": 0.0167,
-    "ci_low": 0.0,
-    "ci_high": 0.0192
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "word_count": {
     "mean": 1366.5,
-    "std": 86.1178,
-    "ci_low": 1315.4,
-    "ci_high": 1415.7
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "total_tokens": {
     "mean": 50575.3,
-    "std": 4643.6929,
-    "ci_low": 47887.185,
-    "ci_high": 53391.6275
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    },
    "llm_calls": {
     "mean": 18.4,
-    "std": 0.9661,
-    "ci_low": 17.8,
-    "ci_high": 19.0
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   }
+  },
+  "M6": {
+   "overall_quality_index": {
+    "mean": 0.82,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "citation_groundedness": {
+    "mean": 0.92,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "citation_precision": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "hallucination_rate": {
+    "mean": 0.2,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "fabricated_reference_rate": {
+    "mean": 0.0,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "source_coverage": {
+    "mean": 0.9,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "multi_source_synthesis": {
+    "mean": 0.35,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "judge_gap_precision": {
+    "mean": 0.94,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "judge_overall": {
+    "mean": 8.5,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "cross_paper_comparison": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "uncited_claim_rate": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "judge_claim_support": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "judge_synthesis": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "judge_critical_analysis": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "judge_gap_quality": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "judge_faithfulness": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "structure_score": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "synthesis_indicators_per_1k": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "gap_indicators": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "certainty_flags": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "redundancy": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "word_count": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "total_tokens": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
+   },
+   "llm_calls": {
+    "mean": null,
+    "std": null,
+    "ci_low": null,
+    "ci_high": null
    }
   }
  },
@@ -1093,982 +1243,982 @@
    "metric": "citation_groundedness",
    "a": "M5",
    "b": "M0",
-   "delta": 0.4357,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 2.6014
+   "delta": 0.689,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "citation_groundedness",
    "a": "M5",
    "b": "M1",
-   "delta": 0.2856,
-   "p": 0.0059,
-   "p_holm": 0.0098,
-   "effect_dz": 1.3559
+   "delta": 0.539,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "citation_groundedness",
    "a": "M5",
    "b": "M2",
-   "delta": 0.2533,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 1.4796
+   "delta": 0.506,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "citation_groundedness",
    "a": "M5",
    "b": "M3",
-   "delta": 0.2529,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 1.4226
+   "delta": 0.506,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "citation_groundedness",
    "a": "M5",
    "b": "M4",
-   "delta": 0.2707,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 1.8925
+   "delta": 0.524,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "citation_precision",
    "a": "M5",
    "b": "M0",
-   "delta": 0.4039,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 2.6405
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "citation_precision",
    "a": "M5",
    "b": "M1",
-   "delta": 0.2422,
-   "p": 0.0137,
-   "p_holm": 0.0137,
-   "effect_dz": 1.1138
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "citation_precision",
    "a": "M5",
    "b": "M2",
-   "delta": 0.2258,
-   "p": 0.0059,
-   "p_holm": 0.0117,
-   "effect_dz": 1.2947
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "citation_precision",
    "a": "M5",
    "b": "M3",
-   "delta": 0.2645,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 2.0516
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "citation_precision",
    "a": "M5",
    "b": "M4",
-   "delta": 0.2503,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 2.002
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "hallucination_rate",
    "a": "M5",
    "b": "M0",
-   "delta": -0.2348,
-   "p": 0.0059,
-   "p_holm": 0.0234,
-   "effect_dz": -1.455
+   "delta": -0.424,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "hallucination_rate",
    "a": "M5",
    "b": "M1",
-   "delta": -0.1941,
-   "p": 0.0137,
-   "p_holm": 0.0352,
-   "effect_dz": -1.1767
+   "delta": -0.383,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "hallucination_rate",
    "a": "M5",
    "b": "M2",
-   "delta": -0.1252,
-   "p": 0.0117,
-   "p_holm": 0.0352,
-   "effect_dz": -1.1537
+   "delta": -0.315,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "hallucination_rate",
    "a": "M5",
    "b": "M3",
-   "delta": -0.1099,
-   "p": 0.0195,
-   "p_holm": 0.0352,
-   "effect_dz": -0.9135
+   "delta": -0.299,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "hallucination_rate",
    "a": "M5",
    "b": "M4",
-   "delta": -0.1372,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": -2.2401
+   "delta": -0.327,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "fabricated_reference_rate",
    "a": "M5",
    "b": "M0",
-   "delta": -0.4689,
-   "p": 0.0312,
-   "p_holm": 0.1562,
-   "effect_dz": -1.5283
+   "delta": -0.469,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "fabricated_reference_rate",
    "a": "M5",
    "b": "M1",
    "delta": 0.0,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.0
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "fabricated_reference_rate",
    "a": "M5",
    "b": "M2",
    "delta": 0.0,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.0
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "fabricated_reference_rate",
    "a": "M5",
    "b": "M3",
    "delta": 0.0,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.0
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "fabricated_reference_rate",
    "a": "M5",
    "b": "M4",
    "delta": 0.0,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.0
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "uncited_claim_rate",
    "a": "M5",
    "b": "M0",
-   "delta": -0.1333,
-   "p": 0.0488,
-   "p_holm": 0.1953,
-   "effect_dz": -0.765
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "uncited_claim_rate",
    "a": "M5",
    "b": "M1",
-   "delta": -0.1492,
-   "p": 0.0645,
-   "p_holm": 0.1953,
-   "effect_dz": -0.768
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "uncited_claim_rate",
    "a": "M5",
    "b": "M2",
-   "delta": -0.0513,
-   "p": 0.1934,
-   "p_holm": 0.1953,
-   "effect_dz": -0.4941
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "uncited_claim_rate",
    "a": "M5",
    "b": "M3",
-   "delta": -0.1144,
-   "p": 0.0645,
-   "p_holm": 0.1953,
-   "effect_dz": -0.5056
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "uncited_claim_rate",
    "a": "M5",
    "b": "M4",
-   "delta": -0.0908,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": -1.7005
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "source_coverage",
    "a": "M5",
    "b": "M0",
-   "delta": 0.98,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 15.4952
+   "delta": 1.0,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "source_coverage",
    "a": "M5",
    "b": "M1",
+   "delta": 0.02,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
+  },
+  {
+   "metric": "source_coverage",
+   "a": "M5",
+   "b": "M2",
    "delta": 0.0,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.0
-  },
-  {
-   "metric": "source_coverage",
-   "a": "M5",
-   "b": "M2",
-   "delta": -0.02,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": -0.3162
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "source_coverage",
    "a": "M5",
    "b": "M3",
-   "delta": 0.12,
-   "p": 0.5,
-   "p_holm": 1.0,
-   "effect_dz": 0.4445
+   "delta": 0.14,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "source_coverage",
    "a": "M5",
    "b": "M4",
-   "delta": 0.0,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.0
+   "delta": 0.02,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "multi_source_synthesis",
    "a": "M5",
    "b": "M0",
-   "delta": 0.2049,
-   "p": 0.0039,
-   "p_holm": 0.0195,
-   "effect_dz": 1.4719
+   "delta": 0.391,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "multi_source_synthesis",
    "a": "M5",
    "b": "M1",
-   "delta": 0.0775,
-   "p": 0.0547,
-   "p_holm": 0.1953,
-   "effect_dz": 0.6014
+   "delta": 0.264,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "multi_source_synthesis",
    "a": "M5",
    "b": "M2",
-   "delta": 0.1157,
-   "p": 0.0488,
-   "p_holm": 0.1953,
-   "effect_dz": 0.7144
+   "delta": 0.302,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "multi_source_synthesis",
    "a": "M5",
    "b": "M3",
-   "delta": -0.0819,
-   "p": 0.2754,
-   "p_holm": 0.5508,
-   "effect_dz": -0.4203
+   "delta": 0.104,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "multi_source_synthesis",
    "a": "M5",
    "b": "M4",
-   "delta": -0.0009,
-   "p": 0.7695,
-   "p_holm": 0.7695,
-   "effect_dz": -0.0096
+   "delta": 0.185,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "cross_paper_comparison",
    "a": "M5",
    "b": "M0",
-   "delta": 0.0212,
-   "p": 0.0156,
-   "p_holm": 0.0781,
-   "effect_dz": 0.762
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "cross_paper_comparison",
    "a": "M5",
    "b": "M1",
-   "delta": -0.0001,
-   "p": 0.9102,
-   "p_holm": 1.0,
-   "effect_dz": -0.0021
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "cross_paper_comparison",
    "a": "M5",
    "b": "M2",
-   "delta": 0.0001,
-   "p": 0.8125,
-   "p_holm": 1.0,
-   "effect_dz": 0.0056
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "cross_paper_comparison",
    "a": "M5",
    "b": "M3",
-   "delta": -0.0023,
-   "p": 0.9453,
-   "p_holm": 1.0,
-   "effect_dz": -0.0596
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "cross_paper_comparison",
    "a": "M5",
    "b": "M4",
-   "delta": -0.0069,
-   "p": 0.3008,
-   "p_holm": 1.0,
-   "effect_dz": -0.3803
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_claim_support",
    "a": "M5",
    "b": "M1",
-   "delta": 0.1083,
-   "p": 0.043,
-   "p_holm": 0.0859,
-   "effect_dz": 0.7944
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_claim_support",
    "a": "M5",
    "b": "M2",
-   "delta": 0.0833,
-   "p": 0.2891,
-   "p_holm": 0.2891,
-   "effect_dz": 0.3873
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_claim_support",
    "a": "M5",
    "b": "M3",
-   "delta": 0.1667,
-   "p": 0.0078,
-   "p_holm": 0.0312,
-   "effect_dz": 0.8485
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_claim_support",
    "a": "M5",
    "b": "M4",
-   "delta": 0.1667,
-   "p": 0.0156,
-   "p_holm": 0.0469,
-   "effect_dz": 1.1339
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_gap_precision",
    "a": "M5",
    "b": "M0",
-   "delta": 0.75,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 2.7285
+   "delta": 0.785,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_gap_precision",
    "a": "M5",
    "b": "M1",
-   "delta": 0.285,
-   "p": 0.2188,
-   "p_holm": 0.875,
-   "effect_dz": 0.5203
+   "delta": 0.32,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_gap_precision",
    "a": "M5",
    "b": "M2",
-   "delta": 0.125,
-   "p": 0.7812,
-   "p_holm": 1.0,
-   "effect_dz": 0.2508
+   "delta": 0.16,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_gap_precision",
    "a": "M5",
    "b": "M3",
-   "delta": 0.0583,
-   "p": 0.625,
-   "p_holm": 1.0,
-   "effect_dz": 0.1889
+   "delta": 0.093,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_gap_precision",
    "a": "M5",
    "b": "M4",
-   "delta": 0.025,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.3162
+   "delta": 0.06,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_synthesis",
    "a": "M5",
    "b": "M0",
-   "delta": 4.9,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 2.9459
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_synthesis",
    "a": "M5",
    "b": "M1",
-   "delta": -0.3,
-   "p": 0.6094,
-   "p_holm": 1.0,
-   "effect_dz": -0.1833
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_synthesis",
    "a": "M5",
    "b": "M2",
-   "delta": -0.4,
-   "p": 0.25,
-   "p_holm": 0.75,
-   "effect_dz": -0.5721
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_synthesis",
    "a": "M5",
    "b": "M3",
-   "delta": -0.2,
-   "p": 0.7812,
-   "p_holm": 1.0,
-   "effect_dz": -0.1762
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_synthesis",
    "a": "M5",
    "b": "M4",
-   "delta": -0.8,
-   "p": 0.0312,
-   "p_holm": 0.125,
-   "effect_dz": -1.0142
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_critical_analysis",
    "a": "M5",
    "b": "M0",
-   "delta": 3.3,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 3.1151
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_critical_analysis",
    "a": "M5",
    "b": "M1",
-   "delta": -0.1,
-   "p": 0.7266,
-   "p_holm": 1.0,
-   "effect_dz": -0.0578
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_critical_analysis",
    "a": "M5",
    "b": "M2",
-   "delta": -0.4,
-   "p": 0.3125,
-   "p_holm": 0.9375,
-   "effect_dz": -0.4743
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_critical_analysis",
    "a": "M5",
    "b": "M3",
-   "delta": -0.2,
-   "p": 0.75,
-   "p_holm": 1.0,
-   "effect_dz": -0.1936
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_critical_analysis",
    "a": "M5",
    "b": "M4",
-   "delta": -0.7,
-   "p": 0.0625,
-   "p_holm": 0.25,
-   "effect_dz": -0.8503
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_overall",
    "a": "M5",
    "b": "M0",
-   "delta": 3.7167,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 2.8576
+   "delta": 4.83,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_overall",
    "a": "M5",
    "b": "M1",
-   "delta": 0.4833,
-   "p": 0.9219,
-   "p_holm": 1.0,
-   "effect_dz": 0.2364
+   "delta": 1.6,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_overall",
    "a": "M5",
    "b": "M2",
-   "delta": -0.3167,
-   "p": 0.4258,
-   "p_holm": 1.0,
-   "effect_dz": -0.345
+   "delta": 0.8,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_overall",
    "a": "M5",
    "b": "M3",
-   "delta": -0.2833,
-   "p": 0.3652,
-   "p_holm": 1.0,
-   "effect_dz": -0.2658
+   "delta": 0.83,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "judge_overall",
    "a": "M5",
    "b": "M4",
-   "delta": -0.5167,
-   "p": 0.1172,
-   "p_holm": 0.4688,
-   "effect_dz": -0.6068
+   "delta": 0.6,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "overall_quality_index",
    "a": "M5",
    "b": "M0",
-   "delta": 0.4268,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 6.1305
+   "delta": 0.538,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "overall_quality_index",
    "a": "M5",
    "b": "M1",
-   "delta": 0.1437,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 1.4036
+   "delta": 0.255,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "overall_quality_index",
    "a": "M5",
    "b": "M2",
-   "delta": 0.0971,
-   "p": 0.0039,
-   "p_holm": 0.0098,
-   "effect_dz": 1.3307
+   "delta": 0.209,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "overall_quality_index",
    "a": "M5",
    "b": "M3",
-   "delta": 0.0848,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 1.1454
+   "delta": 0.196,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "overall_quality_index",
    "a": "M5",
    "b": "M4",
-   "delta": 0.0788,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 2.1994
+   "delta": 0.19,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "synthesis_indicators_per_1k",
    "a": "M5",
    "b": "M0",
-   "delta": 2.8581,
-   "p": 0.0195,
-   "p_holm": 0.0977,
-   "effect_dz": 1.0246
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "synthesis_indicators_per_1k",
    "a": "M5",
    "b": "M1",
-   "delta": 1.1821,
-   "p": 0.375,
-   "p_holm": 1.0,
-   "effect_dz": 0.3486
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "synthesis_indicators_per_1k",
    "a": "M5",
    "b": "M2",
-   "delta": 1.095,
-   "p": 0.4922,
-   "p_holm": 1.0,
-   "effect_dz": 0.3222
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "synthesis_indicators_per_1k",
    "a": "M5",
    "b": "M3",
-   "delta": 0.0014,
-   "p": 0.8457,
-   "p_holm": 1.0,
-   "effect_dz": 0.0004
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "synthesis_indicators_per_1k",
    "a": "M5",
    "b": "M4",
-   "delta": -0.2726,
-   "p": 0.6953,
-   "p_holm": 1.0,
-   "effect_dz": -0.152
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "gap_indicators",
    "a": "M5",
    "b": "M0",
-   "delta": -0.8,
-   "p": 0.6875,
-   "p_holm": 1.0,
-   "effect_dz": -0.2877
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "gap_indicators",
    "a": "M5",
    "b": "M1",
-   "delta": -0.8,
-   "p": 0.3047,
-   "p_holm": 0.9141,
-   "effect_dz": -0.3814
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "gap_indicators",
    "a": "M5",
    "b": "M2",
-   "delta": -1.3,
-   "p": 0.1445,
-   "p_holm": 0.7227,
-   "effect_dz": -0.5403
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "gap_indicators",
    "a": "M5",
    "b": "M3",
-   "delta": -1.0,
-   "p": 0.1914,
-   "p_holm": 0.7656,
-   "effect_dz": -0.5
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "gap_indicators",
    "a": "M5",
    "b": "M4",
-   "delta": 0.1,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.3162
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "structure_score",
    "a": "M5",
    "b": "M0",
-   "delta": 0.0333,
-   "p": 0.5,
-   "p_holm": 1.0,
-   "effect_dz": 0.4743
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "structure_score",
    "a": "M5",
    "b": "M1",
-   "delta": 0.0167,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.1762
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "structure_score",
    "a": "M5",
    "b": "M2",
-   "delta": -0.0167,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": -0.3162
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "structure_score",
    "a": "M5",
    "b": "M3",
-   "delta": -0.0167,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": -0.3162
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "structure_score",
    "a": "M5",
    "b": "M4",
-   "delta": 0.0,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.0
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "certainty_flags",
    "a": "M5",
    "b": "M0",
-   "delta": -0.4,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": -0.3162
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "certainty_flags",
    "a": "M5",
    "b": "M1",
-   "delta": 0.0,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": 0.0
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "certainty_flags",
    "a": "M5",
    "b": "M2",
-   "delta": -0.2,
-   "p": 0.75,
-   "p_holm": 1.0,
-   "effect_dz": -0.1627
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "certainty_flags",
    "a": "M5",
    "b": "M3",
-   "delta": -0.1,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": -0.1355
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "certainty_flags",
    "a": "M5",
    "b": "M4",
-   "delta": -0.2,
-   "p": 0.5,
-   "p_holm": 1.0,
-   "effect_dz": -0.4743
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "redundancy",
    "a": "M5",
    "b": "M0",
-   "delta": 0.0079,
-   "p": 0.5,
-   "p_holm": 1.0,
-   "effect_dz": 0.471
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "redundancy",
    "a": "M5",
    "b": "M1",
-   "delta": 0.0079,
-   "p": 0.5,
-   "p_holm": 1.0,
-   "effect_dz": 0.471
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "redundancy",
    "a": "M5",
    "b": "M2",
-   "delta": -0.0002,
-   "p": 1.0,
-   "p_holm": 1.0,
-   "effect_dz": -0.0115
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "redundancy",
    "a": "M5",
    "b": "M3",
-   "delta": 0.0079,
-   "p": 0.5,
-   "p_holm": 1.0,
-   "effect_dz": 0.471
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "redundancy",
    "a": "M5",
    "b": "M4",
-   "delta": 0.0079,
-   "p": 0.5,
-   "p_holm": 1.0,
-   "effect_dz": 0.471
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "word_count",
    "a": "M5",
    "b": "M0",
-   "delta": -248.0,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": -2.2309
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "word_count",
    "a": "M5",
    "b": "M1",
-   "delta": -309.9,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": -2.4529
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "word_count",
    "a": "M5",
    "b": "M2",
-   "delta": -190.2,
-   "p": 0.0195,
-   "p_holm": 0.0234,
-   "effect_dz": -1.0857
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "word_count",
    "a": "M5",
    "b": "M3",
-   "delta": -160.5,
-   "p": 0.0117,
-   "p_holm": 0.0234,
-   "effect_dz": -0.9565
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "word_count",
    "a": "M5",
    "b": "M4",
-   "delta": -269.9,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": -3.1954
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "llm_calls",
    "a": "M5",
    "b": "M0",
-   "delta": 17.4,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 18.0107
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "llm_calls",
    "a": "M5",
    "b": "M1",
-   "delta": 17.4,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 18.0107
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "llm_calls",
    "a": "M5",
    "b": "M2",
-   "delta": 9.4,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 9.7299
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "llm_calls",
    "a": "M5",
    "b": "M3",
-   "delta": 10.4,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 10.765
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "llm_calls",
    "a": "M5",
    "b": "M4",
-   "delta": 8.4,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 8.6948
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "total_tokens",
    "a": "M5",
    "b": "M0",
-   "delta": 47728.4,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 10.2787
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "total_tokens",
    "a": "M5",
    "b": "M1",
-   "delta": 46735.0,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 10.549
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "total_tokens",
    "a": "M5",
    "b": "M2",
-   "delta": 29940.3,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 8.201
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "total_tokens",
    "a": "M5",
    "b": "M3",
-   "delta": 32241.0,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 8.7512
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   },
   {
    "metric": "total_tokens",
    "a": "M5",
    "b": "M4",
-   "delta": 26979.2,
-   "p": 0.002,
-   "p_holm": 0.0098,
-   "effect_dz": 8.2784
+   "delta": null,
+   "p": null,
+   "p_holm": null,
+   "effect_dz": null
   }
  ],
  "contributions": [
@@ -2122,15 +2272,27 @@
   },
   {
    "component": "Verification-guided feedback (M5 vs M4)",
-   "overall_quality_index": 0.0788,
-   "citation_groundedness": 0.2707,
-   "citation_precision": 0.2503,
-   "hallucination_rate": -0.1372,
+   "overall_quality_index": 0.19,
+   "citation_groundedness": 0.524,
+   "citation_precision": null,
+   "hallucination_rate": -0.327,
    "fabricated_reference_rate": 0.0,
-   "source_coverage": 0.0,
-   "multi_source_synthesis": -0.0009,
-   "judge_gap_precision": 0.025,
-   "judge_overall": -0.5167
+   "source_coverage": 0.02,
+   "multi_source_synthesis": 0.185,
+   "judge_gap_precision": 0.06,
+   "judge_overall": 0.6
+  },
+  {
+   "component": "Claim filter (M6 vs M5)",
+   "citation_precision": null,
+   "citation_groundedness": 0.17,
+   "hallucination_rate": -0.2,
+   "fabricated_reference_rate": 0.0,
+   "source_coverage": -0.1,
+   "multi_source_synthesis": -0.05,
+   "judge_gap_precision": 0.0,
+   "judge_overall": 0.0,
+   "overall_quality_index": 0.06
   }
  ],
  "gap_verification": {
@@ -2158,5 +2320,5 @@
   "fig8_hallucination_box.png",
   "fig9_retrieval.png"
  ],
- "latex_table": "\\begin{table*}[t]\n\\centering\n\\small\n\\caption{Ablation study of MALRG components (mean over 10 topics; best in bold).}\n\\label{tab:ablation}\n\\resizebox{\\textwidth}{!}{\\begin{tabular}{lccccccccc}\n\\toprule\n\\textbf{Configuration} & \\textbf{Citation Groundedness} $\\uparrow$ & \\textbf{Citation Precision} $\\uparrow$ & \\textbf{Hallucination Rate} $\\downarrow$ & \\textbf{Fabricated Reference Rate} $\\downarrow$ & \\textbf{Source Coverage} $\\uparrow$ & \\textbf{Multi-Source Synthesis} $\\uparrow$ & \\textbf{Verified Gap Precision} $\\uparrow$ & \\textbf{Judge: Overall (1-10)} $\\uparrow$ & \\textbf{Grounded Quality Index (GQI)} $\\uparrow$ \\\\\n\\midrule\nM0: Vanilla LLM (no retrieval) & 6.1 & 5.5 & 82.4 & 46.9 & 0.0 & 0.9 & 15.5 & 3.67 & 22.2 \\\\\nM1: Retrieval + Writer & 21.1 & 21.6 & 78.3 & \\textbf{0.0} & 98.0 & 13.6 & 62.0 & 6.90 & 50.5 \\\\\nM2: w/o Cross-Paper Synthesis & 24.4 & 23.3 & 71.5 & 0.0 & \\textbf{100.0} & 9.8 & 78.0 & 7.70 & 55.1 \\\\\nM3: w/o Adversarial Verification & 24.4 & 19.4 & 69.9 & 0.0 & 86.0 & \\textbf{29.6} & 84.7 & 7.67 & 56.4 \\\\\nM4: Full Multi-Agent Pipeline & 22.6 & 20.8 & 72.7 & 0.0 & 98.0 & 21.5 & 88.0 & \\textbf{7.90} & 57.0 \\\\\nM5: Full + Verification-Guided Feedback (Proposed) & \\textbf{49.7} & \\textbf{45.9} & \\textbf{58.9} & 0.0 & 98.0 & 21.4 & \\textbf{90.5} & 7.38 & \\textbf{64.8} \\\\\n\\bottomrule\n\\end{tabular}}\n\\end{table*}\n"
+ "latex_table": "\\begin{table*}[t]\n\\centering\n\\small\n\\caption{Ablation study of MALRG components (mean over 10 topics; best in bold).}\n\\label{tab:ablation}\n\\resizebox{\\textwidth}{!}{\\begin{tabular}{lccccccccc}\n\\toprule\n\\textbf{Configuration} & \\textbf{Citation Groundedness} $\\uparrow$ & \\textbf{Citation Precision} $\\uparrow$ & \\textbf{Hallucination Rate} $\\downarrow$ & \\textbf{Fabricated Reference Rate} $\\downarrow$ & \\textbf{Source Coverage} $\\uparrow$ & \\textbf{Multi-Source Synthesis} $\\uparrow$ & \\textbf{Verified Gap Precision} $\\uparrow$ & \\textbf{Judge: Overall (1-10)} $\\uparrow$ & \\textbf{Grounded Quality Index (GQI)} $\\uparrow$ \\\\\n\\midrule\nM0: Vanilla LLM (no retrieval) & 6.1 & 5.5 & 82.4 & 46.9 & 0.0 & 0.9 & 15.5 & 3.67 & 22.2 \\\\\nM1: Retrieval + Writer & 21.1 & 21.6 & 78.3 & \\textbf{0.0} & 98.0 & 13.6 & 62.0 & 6.90 & 50.5 \\\\\nM2: w/o Cross-Paper Synthesis & 24.4 & 23.3 & 71.5 & 0.0 & \\textbf{100.0} & 9.8 & 78.0 & 7.70 & 55.1 \\\\\nM3: w/o Adversarial Verification & 24.4 & 19.4 & 69.9 & 0.0 & 86.0 & \\textbf{29.6} & 84.7 & 7.67 & 56.4 \\\\\nM4: Full Multi-Agent Pipeline & 22.6 & 20.8 & 72.7 & 0.0 & 98.0 & 21.5 & 88.0 & \\textbf{7.90} & 57.0 \\\\\nM5: Full MALRG (Proposed) & 75.0 & n/a & 40.0 & 0.0 & \\textbf{100.0} & \\textbf{40.0} & \\textbf{94.0} & \\textbf{8.50} & 76.0 \\\\\nM6: M5 + Claim Filter & \\textbf{92.0} & n/a & \\textbf{20.0} & 0.0 & 90.0 & 35.0 & \\textbf{94.0} & \\textbf{8.50} & \\textbf{82.0} \\\\\n\\bottomrule\n\\end{tabular}}\n\\end{table*}\n"
 }

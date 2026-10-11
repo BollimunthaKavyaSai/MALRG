@@ -63,3 +63,20 @@ archive/
 Thumbs.db
 .vscode/
 .idea/
+
+# Large data and run outputs (code only in the repo)
+MALRG_Evaluation_Suite/runs/
+MALRG_Evaluation_Suite/cache/
+MALRG_Evaluation_Suite/data/pdfs/
+MALRG_Evaluation_Suite/report_build/
+MALRG_Evaluation_Suite/human written/
+MALRG_Evaluation_Suite/human_literature_reviews_written by human/
+MALRG_Evaluation_Suite/Human_Reference_Literature_Reviews_10_Topics/
+MALRG_Evaluation_Suite/reference_reviews_llm/
+MALRG_Evaluation_Suite/source_grounded_literature_reviews_and_notes/
+MALRG_Evaluation_Suite/*.xlsx
+MALRG_Evaluation_Suite/*.zip
+benchmark/
+experiments/
+paper_cache/
+analyze_experiments.py

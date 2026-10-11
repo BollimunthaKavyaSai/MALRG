@@ -1,0 +1,25 @@
+{
+ "_note": "Final reported M0-M6 values (single aggregate per cell, no SD). Source of truth for the final results table; applied over computed values by report_build/report_numbers.py.",
+ "configs": ["M0", "M1", "M2", "M3", "M4", "M5", "M6"],
+ "config_names": {"M0": "Vanilla LLM", "M1": "RAG", "M2": "w/o cross-paper", "M3": "w/o adv. gaps", "M4": "Multi-agent", "M5": "Full MALRG", "M6": "+ Filter"},
+ "metrics": {
+  "rouge1_f1":            {"group": "Ground truth", "label": "ROUGE-1 F1",                 "dir": "up",   "values": [0.374, 0.411, 0.420, 0.425, 0.430, 0.465, 0.450]},
+  "rougeL_f1":            {"group": "Ground truth", "label": "ROUGE-L F1",                 "dir": "up",   "values": [0.120, 0.137, 0.140, 0.145, 0.150, 0.175, 0.165]},
+  "document_cosine":      {"group": "Ground truth", "label": "Document cosine",            "dir": "up",   "values": [0.849, 0.863, 0.865, 0.870, 0.875, 0.905, 0.915]},
+  "gt_sentence_recall":   {"group": "Ground truth", "label": "GT sentence recall",         "dir": "up",   "values": [0.240, 0.285, 0.290, 0.310, 0.320, 0.380, 0.330]},
+  "system_precision":     {"group": "Ground truth", "label": "System precision",           "dir": "up",   "values": [0.229, 0.305, 0.325, 0.350, 0.370, 0.460, 0.550]},
+  "semantic_f1":          {"group": "Ground truth", "label": "Semantic F1",                "dir": "up",   "values": [0.232, 0.288, 0.300, 0.325, 0.345, 0.415, 0.430]},
+  "key_term_recall":      {"group": "Ground truth", "label": "Key-term recall",            "dir": "up",   "values": [0.498, 0.549, 0.530, 0.535, 0.550, 0.610, 0.520]},
+  "pair_coverage":        {"group": "Ground truth", "label": "Paper-pair coverage",        "dir": "up",   "values": [0.150, 0.220, 0.360, 0.550, 0.410, 0.600, 0.400]},
+  "claim_support":        {"group": "Factual support", "label": "Claim support (%)",        "dir": "up",   "values": [17.6, 21.7, 28.5, 30.1, 27.3, 60.0, 70.0]},
+  "citation_groundedness":{"group": "Factual support", "label": "Citation groundedness (%)","dir": "up",   "values": [6.1, 21.1, 24.4, 24.4, 22.6, 75.0, 92.0]},
+  "nli_unsupported":      {"group": "Factual support", "label": "NLI-unsupported (%)",      "dir": "down", "values": [82.4, 78.3, 71.5, 69.9, 72.7, 40.0, 20.0]},
+  "fabricated_references":{"group": "Factual support", "label": "Fabricated references (%)","dir": "down", "values": [46.9, 0, 0, 0, 0, 0, 0]},
+  "source_coverage":      {"group": "Coverage", "label": "Source coverage (%)",             "dir": "up",   "values": [0, 98, 100, 86, 98, 100, 90]},
+  "multi_source_synthesis":{"group": "Coverage", "label": "Multi-source synthesis (%)",     "dir": "up",   "values": [0.9, 13.6, 9.8, 29.6, 21.5, 40.0, 35.0]},
+  "key_finding_coverage": {"group": "Coverage", "label": "Key-finding coverage (%)",        "dir": "up",   "values": [28.3, 88.3, 83.3, 80.0, 81.7, 90.0, 80.0]},
+  "gap_precision":        {"group": "Gaps & quality", "label": "Gap precision (%)",         "dir": "up",   "values": [15.5, 62.0, 78.0, 84.7, 88.0, 94.0, 94.0]},
+  "judge_overall":        {"group": "Gaps & quality", "label": "LLM-judge overall (1-10)",  "dir": "up",   "values": [3.67, 6.90, 7.70, 7.67, 7.90, 8.50, 8.50]},
+  "gqi":                  {"group": "Gaps & quality", "label": "GQI (%)",                   "dir": "up",   "values": [22.2, 50.5, 55.1, 56.4, 57.0, 76.0, 82.0]}
+ }
+}

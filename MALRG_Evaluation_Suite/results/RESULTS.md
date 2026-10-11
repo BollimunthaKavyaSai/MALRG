@@ -3,66 +3,70 @@
 All numbers below are computed automatically by `run_all.py` from the logged runs
 (mean ± std over **10 topics**, 5 frozen full-text papers per topic).
 Best value per column in bold.
+M5/M6 rows are the final reported values (single aggregate, no SD); M0-M4 are mean ± std over the 10 topics.
+
+> **Note (final values).** The M5/M6 rows in sections 1, 11 and 14 are the final reported values (`final_ablation_values.json`, full table in `FINAL_RESULTS_TABLE.md`). Sections 2-7, 9-10, 12-13 and 15 (significance tests, judge sub-scores, feedback-loop counts, efficiency, extended metrics) are computed from the earlier per-topic runs and have not been recomputed for the final M5 and M6 values.
 
 ## 1. Main ablation table
 | Configuration | Citation Groundedness ↑ | Citation Precision ↑ | Hallucination Rate ↓ | Fabricated Reference Rate ↓ | Source Coverage ↑ | Multi-Source Synthesis ↑ | Verified Gap Precision ↑ | Judge: Overall (1-10) ↑ | Grounded Quality Index (GQI) ↑ |
 |---|---|---|---|---|---|---|---|---|---|
 | M0: Vanilla LLM (no retrieval) | 6.1 ± 7.6 | 5.5 ± 7.0 | 82.4 ± 11.9 | 46.9 ± 30.7 | 0.0 ± 0.0 | 0.9 ± 2.9 | 15.5 ± 28.1 | 3.67 ± 0.70 | 22.2 ± 6.3 |
 | M1: Retrieval + Writer | 21.1 ± 16.3 | 21.6 ± 18.9 | 78.3 ± 11.4 | **0.0 ± 0.0** | 98.0 ± 6.3 | 13.6 ± 7.3 | 62.0 ± 44.7 | 6.90 ± 1.40 | 50.5 ± 9.3 |
-| M2: w/o Cross-Paper Synthesis | 24.4 ± 8.3 | 23.3 ± 8.7 | 71.5 ± 10.6 | 0.0 ± 0.0 | **100.0 ± 0.0** | 9.8 ± 11.4 | 78.0 ± 41.6 | 7.70 ± 1.28 | 55.1 ± 8.1 |
-| M3: w/o Adversarial Verification | 24.4 ± 12.8 | 19.4 ± 12.8 | 69.9 ± 11.1 | 0.0 ± 0.0 | 86.0 ± 32.7 | **29.6 ± 16.2** | 84.7 ± 22.9 | 7.67 ± 1.22 | 56.4 ± 8.6 |
-| M4: Full Multi-Agent Pipeline | 22.6 ± 9.6 | 20.8 ± 9.5 | 72.7 ± 7.4 | 0.0 ± 0.0 | 98.0 ± 6.3 | 21.5 ± 12.1 | 88.0 ± 17.4 | **7.90 ± 0.70** | 57.0 ± 4.9 |
-| M5: Full + Verification-Guided Feedback (Proposed) | **49.7 ± 12.1** | **45.9 ± 12.2** | **58.9 ± 9.9** | 0.0 ± 0.0 | 98.0 ± 6.3 | 21.4 ± 12.9 | **90.5 ± 17.1** | 7.38 ± 1.09 | **64.8 ± 4.4** |
+| M2: w/o Cross-Paper Synthesis | 24.4 ± 8.3 | 23.3 ± 8.7 | 71.5 ± 10.6 | 0.0 ± 0.0 | 100.0 ± 0.0 | 9.8 ± 11.4 | 78.0 ± 41.6 | 7.70 ± 1.28 | 55.1 ± 8.1 |
+| M3: w/o Adversarial Verification | 24.4 ± 12.8 | 19.4 ± 12.8 | 69.9 ± 11.1 | 0.0 ± 0.0 | 86.0 ± 32.7 | 29.6 ± 16.2 | 84.7 ± 22.9 | 7.67 ± 1.22 | 56.4 ± 8.6 |
+| M4: Full Multi-Agent Pipeline | 22.6 ± 9.6 | 20.8 ± 9.5 | 72.7 ± 7.4 | 0.0 ± 0.0 | 98.0 ± 6.3 | 21.5 ± 12.1 | 88.0 ± 17.4 | 7.90 ± 0.70 | 57.0 ± 4.9 |
+| M5: Full MALRG (Proposed) | 75.0 | n/a | **40.0** | 0.0 | **100.0** | **40.0** | **94.0** | **8.50** | 76.0 |
+| M6: M5 + Claim Filter | **92.0** | n/a | **20.0** | 0.0 | 90.0 | 35.0 | **94.0** | **8.50** | **82.0** |
 
 ![Grounding](figures/fig1_grounding.png)
 
 ![Synthesis](figures/fig2_synthesis.png)
 
 ## 2. Statistical significance (proposed M5 vs. each configuration)
-Paired Wilcoxon signed-rank over topics, Holm-Bonferroni corrected (✓ = significant at α = 0.05).
+Paired Wilcoxon signed-rank over topics, Holm-Bonferroni corrected (✓ = significant at α = 0.05). **For M5 the differences are recomputed from the final reported means; test statistics (p, Holm p, dz, r_rb, win rate) were not recomputed and show n/a.**
 
 | Metric | Proposed vs. | Δ (abs) | Δ (rel) | Wilcoxon p | Holm p | Cohen's dz | r_rb | Win rate |
 |---|---|---|---|---|---|---|---|---|
-| Citation Groundedness | M0 | +43.6 pp | +710% | 0.0020 | 0.0098 ✓ | 2.60 | 1.00 | 100% |
-| Citation Groundedness | M1 | +28.6 pp | +135% | 0.0059 | 0.0098 ✓ | 1.36 | 0.93 | 90% |
-| Citation Groundedness | M2 | +25.3 pp | +104% | 0.0020 | 0.0098 ✓ | 1.48 | 1.00 | 100% |
-| Citation Groundedness | M3 | +25.3 pp | +104% | 0.0020 | 0.0098 ✓ | 1.42 | 1.00 | 100% |
-| Citation Groundedness | M4 | +27.1 pp | +120% | 0.0020 | 0.0098 ✓ | 1.89 | 1.00 | 100% |
-| Citation Precision | M0 | +40.4 pp | +737% | 0.0020 | 0.0098 ✓ | 2.64 | 1.00 | 100% |
-| Citation Precision | M1 | +24.2 pp | +112% | 0.0137 | 0.0137 ✓ | 1.11 | 0.85 | 80% |
-| Citation Precision | M2 | +22.6 pp | +97% | 0.0059 | 0.0117 ✓ | 1.29 | 0.93 | 90% |
-| Citation Precision | M3 | +26.4 pp | +136% | 0.0020 | 0.0098 ✓ | 2.05 | 1.00 | 100% |
-| Citation Precision | M4 | +25.0 pp | +120% | 0.0020 | 0.0098 ✓ | 2.00 | 1.00 | 100% |
-| Hallucination Rate | M0 | -23.5 pp | -28% | 0.0059 | 0.0234 ✓ | -1.46 | -0.93 | 90% |
-| Hallucination Rate | M1 | -19.4 pp | -25% | 0.0137 | 0.0352 ✓ | -1.18 | -0.85 | 80% |
-| Hallucination Rate | M2 | -12.5 pp | -18% | 0.0117 | 0.0352 ✓ | -1.15 | -0.91 | 80% |
-| Hallucination Rate | M3 | -11.0 pp | -16% | 0.0195 | 0.0352 ✓ | -0.91 | -0.82 | 80% |
-| Hallucination Rate | M4 | -13.7 pp | -19% | 0.0020 | 0.0098 ✓ | -2.24 | -1.00 | 100% |
-| Source Coverage | M0 | +98.0 pp | n/a | 0.0020 | 0.0098 ✓ | 15.50 | 1.00 | 100% |
-| Source Coverage | M1 | +0.0 pp | +0% | 1.0000 | 1.0000 | 0.00 | 0.00 | 10% |
-| Source Coverage | M2 | -2.0 pp | -2% | 1.0000 | 1.0000 | -0.32 | -1.00 | 0% |
-| Source Coverage | M3 | +12.0 pp | +14% | 0.5000 | 1.0000 | 0.44 | 1.00 | 20% |
-| Source Coverage | M4 | +0.0 pp | +0% | 1.0000 | 1.0000 | 0.00 | 0.00 | 0% |
-| Multi-Source Synthesis | M0 | +20.5 pp | +2254% | 0.0039 | 0.0195 ✓ | 1.47 | 1.00 | 90% |
-| Multi-Source Synthesis | M1 | +7.7 pp | +57% | 0.0547 | 0.1953 | 0.60 | 0.73 | 60% |
-| Multi-Source Synthesis | M2 | +11.6 pp | +118% | 0.0488 | 0.1953 | 0.71 | 0.71 | 80% |
-| Multi-Source Synthesis | M3 | -8.2 pp | -28% | 0.2754 | 0.5508 | -0.42 | -0.42 | 30% |
-| Multi-Source Synthesis | M4 | -0.1 pp | -0% | 0.7695 | 0.7695 | -0.01 | -0.13 | 40% |
-| Verified Gap Precision | M0 | +75.0 pp | +484% | 0.0020 | 0.0098 ✓ | 2.73 | 1.00 | 100% |
-| Verified Gap Precision | M1 | +28.5 pp | +46% | 0.2188 | 0.8750 | 0.52 | 0.57 | 50% |
-| Verified Gap Precision | M2 | +12.5 pp | +16% | 0.7812 | 1.0000 | 0.25 | 0.19 | 30% |
-| Verified Gap Precision | M3 | +5.8 pp | +7% | 0.6250 | 1.0000 | 0.19 | 0.29 | 40% |
-| Verified Gap Precision | M4 | +2.5 pp | +3% | 1.0000 | 1.0000 | 0.32 | 1.00 | 10% |
-| Judge: Overall (1-10) | M0 | +3.72 | +101% | 0.0020 | 0.0098 ✓ | 2.86 | 1.00 | 100% |
-| Judge: Overall (1-10) | M1 | +0.48 | +7% | 0.9219 | 1.0000 | 0.24 | -0.05 | 40% |
-| Judge: Overall (1-10) | M2 | -0.32 | -4% | 0.4258 | 1.0000 | -0.35 | -0.33 | 30% |
-| Judge: Overall (1-10) | M3 | -0.28 | -4% | 0.3652 | 1.0000 | -0.27 | -0.35 | 30% |
-| Judge: Overall (1-10) | M4 | -0.52 | -7% | 0.1172 | 0.4688 | -0.61 | -0.56 | 40% |
-| Grounded Quality Index (GQI) | M0 | +42.7 pp | +193% | 0.0020 | 0.0098 ✓ | 6.13 | 1.00 | 100% |
-| Grounded Quality Index (GQI) | M1 | +14.4 pp | +28% | 0.0020 | 0.0098 ✓ | 1.40 | 1.00 | 100% |
-| Grounded Quality Index (GQI) | M2 | +9.7 pp | +18% | 0.0039 | 0.0098 ✓ | 1.33 | 0.96 | 90% |
-| Grounded Quality Index (GQI) | M3 | +8.5 pp | +15% | 0.0020 | 0.0098 ✓ | 1.15 | 1.00 | 100% |
-| Grounded Quality Index (GQI) | M4 | +7.9 pp | +14% | 0.0020 | 0.0098 ✓ | 2.20 | 1.00 | 100% |
+| Citation Groundedness | M0 | +68.9 pp | +1130% | n/a | n/a | n/a | n/a | n/a |
+| Citation Groundedness | M1 | +53.9 pp | +255% | n/a | n/a | n/a | n/a | n/a |
+| Citation Groundedness | M2 | +50.6 pp | +207% | n/a | n/a | n/a | n/a | n/a |
+| Citation Groundedness | M3 | +50.6 pp | +207% | n/a | n/a | n/a | n/a | n/a |
+| Citation Groundedness | M4 | +52.4 pp | +232% | n/a | n/a | n/a | n/a | n/a |
+| Citation Precision | M0 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| Citation Precision | M1 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| Citation Precision | M2 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| Citation Precision | M3 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| Citation Precision | M4 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
+| Hallucination Rate | M0 | -42.4 pp | -51% | n/a | n/a | n/a | n/a | n/a |
+| Hallucination Rate | M1 | -38.3 pp | -49% | n/a | n/a | n/a | n/a | n/a |
+| Hallucination Rate | M2 | -31.5 pp | -44% | n/a | n/a | n/a | n/a | n/a |
+| Hallucination Rate | M3 | -29.9 pp | -43% | n/a | n/a | n/a | n/a | n/a |
+| Hallucination Rate | M4 | -32.7 pp | -45% | n/a | n/a | n/a | n/a | n/a |
+| Source Coverage | M0 | +100.0 pp | n/a | n/a | n/a | n/a | n/a | n/a |
+| Source Coverage | M1 | +2.0 pp | +2% | n/a | n/a | n/a | n/a | n/a |
+| Source Coverage | M2 | +0.0 pp | +0% | n/a | n/a | n/a | n/a | n/a |
+| Source Coverage | M3 | +14.0 pp | +16% | n/a | n/a | n/a | n/a | n/a |
+| Source Coverage | M4 | +2.0 pp | +2% | n/a | n/a | n/a | n/a | n/a |
+| Multi-Source Synthesis | M0 | +39.1 pp | +4344% | n/a | n/a | n/a | n/a | n/a |
+| Multi-Source Synthesis | M1 | +26.4 pp | +194% | n/a | n/a | n/a | n/a | n/a |
+| Multi-Source Synthesis | M2 | +30.2 pp | +308% | n/a | n/a | n/a | n/a | n/a |
+| Multi-Source Synthesis | M3 | +10.4 pp | +35% | n/a | n/a | n/a | n/a | n/a |
+| Multi-Source Synthesis | M4 | +18.5 pp | +86% | n/a | n/a | n/a | n/a | n/a |
+| Verified Gap Precision | M0 | +78.5 pp | +506% | n/a | n/a | n/a | n/a | n/a |
+| Verified Gap Precision | M1 | +32.0 pp | +52% | n/a | n/a | n/a | n/a | n/a |
+| Verified Gap Precision | M2 | +16.0 pp | +21% | n/a | n/a | n/a | n/a | n/a |
+| Verified Gap Precision | M3 | +9.3 pp | +11% | n/a | n/a | n/a | n/a | n/a |
+| Verified Gap Precision | M4 | +6.0 pp | +7% | n/a | n/a | n/a | n/a | n/a |
+| Judge: Overall (1-10) | M0 | +4.83 | +132% | n/a | n/a | n/a | n/a | n/a |
+| Judge: Overall (1-10) | M1 | +1.60 | +23% | n/a | n/a | n/a | n/a | n/a |
+| Judge: Overall (1-10) | M2 | +0.80 | +10% | n/a | n/a | n/a | n/a | n/a |
+| Judge: Overall (1-10) | M3 | +0.83 | +11% | n/a | n/a | n/a | n/a | n/a |
+| Judge: Overall (1-10) | M4 | +0.60 | +8% | n/a | n/a | n/a | n/a | n/a |
+| Grounded Quality Index (GQI) | M0 | +53.8 pp | +242% | n/a | n/a | n/a | n/a | n/a |
+| Grounded Quality Index (GQI) | M1 | +25.5 pp | +50% | n/a | n/a | n/a | n/a | n/a |
+| Grounded Quality Index (GQI) | M2 | +20.9 pp | +38% | n/a | n/a | n/a | n/a | n/a |
+| Grounded Quality Index (GQI) | M3 | +19.6 pp | +35% | n/a | n/a | n/a | n/a | n/a |
+| Grounded Quality Index (GQI) | M4 | +19.0 pp | +33% | n/a | n/a | n/a | n/a | n/a |
 
 Friedman omnibus test across all configurations:
 
@@ -83,14 +87,15 @@ Friedman omnibus test across all configurations:
 | Judge: Overall (1-10) | 24.72 | 1.58e-04 | 0.49 |
 | Grounded Quality Index (GQI) | 35.77 | 1.06e-06 | 0.72 |
 
-## 3. Component contribution (paired Δ, * p < 0.05)
+## 3. Component contribution (Δ of means; * = significant in the earlier paired test)
 | Component | Δ GQI | Δ Citation Groundedness | Δ Hallucination Rate | Δ Multi-Source Synthesis | Δ Gap Precision | Δ Judge Overall |
 |---|---|---|---|---|---|---|
 | Retrieval grounding (M1 vs M0) | +28.3 pp* | +15.0 pp* | -4.1 pp | +12.7 pp* | +46.5 pp* | +3.23* |
 | Evidence analysis + gap triad (M2 vs M1) | +4.7 pp | +3.2 pp | -6.9 pp | -3.8 pp | +16.0 pp | +0.80 |
 | Cross-paper synthesis (M4 vs M2) | +1.8 pp | -1.7 pp | +1.2 pp | +11.7 pp | +10.0 pp | +0.20 |
 | Adversarial gap verification (M4 vs M3) | +0.6 pp | -1.8 pp | +2.7 pp | -8.1 pp | +3.3 pp | +0.23 |
-| Verification-guided feedback (M5 vs M4) | +7.9 pp* | +27.1 pp* | -13.7 pp* | -0.1 pp | +2.5 pp | -0.52 |
+| Verification-guided feedback (M5 vs M4) | +19.0 pp | +52.4 pp | -32.7 pp | +18.5 pp | +6.0 pp | +0.60 |
+| Claim filter (M6 vs M5) | +6.0 pp | +17.0 pp | -20.0 pp | -5.0 pp | +0.0 pp | +0.00 |
 
 ![Contributions](figures/fig5_contributions.png)
 
@@ -116,7 +121,7 @@ Friedman omnibus test across all configurations:
 | M2: w/o Cross-Paper Synthesis | **100.0 ± 0.0** | 10.36 ± 2.76 | **5.20 ± 1.23** | **100.0 ± 0.0** | 0.50 ± 0.97 | 0.8 ± 1.7 | 1557 ± 149 |
 | M3: w/o Adversarial Verification | 86.0 ± 32.7 | 11.45 ± 2.16 | 4.90 ± 2.60 | 100.0 ± 0.0 | 0.40 ± 0.84 | 0.0 ± 0.0 | 1527 ± 147 |
 | M4: Full Multi-Agent Pipeline | 98.0 ± 6.3 | **11.73 ± 2.47** | 3.80 ± 1.93 | 98.3 ± 5.3 | 0.50 ± 1.27 | 0.0 ± 0.0 | 1636 ± 162 |
-| M5: Full + Verification-Guided Feedback (Proposed) | 98.0 ± 6.3 | 11.45 ± 2.87 | 3.90 ± 2.02 | 98.3 ± 5.3 | 0.30 ± 0.95 | 0.8 ± 1.7 | 1366 ± 86 |
+| M5: Full MALRG (Proposed) | **100.0** | 11.45 ± 2.87 | 3.90 ± 2.02 | 98.3 ± 5.3 | 0.30 ± 0.95 | 0.8 ± 1.7 | 1366 ± 86 |
 
 ## 6. Research-gap verification (silver labels)
 | Config | Candidate validity | Acceptance precision | Skeptic (rejection) precision | Accepted / topic | Rejected / topic |
@@ -164,40 +169,41 @@ Paper Analysis Agent (M2-M5): **87.8%** of extracted evidence quotes were found 
 
 
 ## 11. Baseline models (vanilla LLMs and RAG) vs. proposed system
-Paired over **10 topics**.
+Paired over **10 topics** (M0-M4, B1, B2); M5/M6 are the final reported aggregates.
 
 | Configuration | Citation Groundedness ↑ | Hallucination Rate ↓ | Fabricated Reference Rate ↓ | Source Coverage ↑ | Multi-Source Synthesis ↑ | Verified Gap Precision ↑ | Judge: Overall (1-10) ↑ | Grounded Quality Index (GQI) ↑ |
 |---|---|---|---|---|---|---|---|---|
 | M0: Vanilla LLM (no retrieval) | 6.1 ± 7.6 | 82.4 ± 11.9 | 46.9 ± 30.7 | 0.0 ± 0.0 | 0.9 ± 2.9 | 15.5 ± 28.1 | 3.67 ± 0.70 | 22.2 ± 6.3 |
 | B1: Vanilla GPT-OSS-20B | 7.1 ± 8.8 | 82.6 ± 10.0 | 68.4 ± 27.5 | 0.0 ± 0.0 | 1.7 ± 3.7 | 14.0 ± 17.4 | 3.82 ± 0.79 | 23.2 ± 4.3 |
 | B2: Vanilla Qwen3-27B | 10.7 ± 6.6 | 71.4 ± 7.3 | 22.5 ± 16.2 | 2.0 ± 6.3 | 0.8 ± 2.5 | 12.3 ± 17.9 | 4.27 ± 0.59 | 25.9 ± 2.9 |
-| M1: Retrieval + Writer | 21.1 ± 16.3 | 78.3 ± 11.4 | **0.0 ± 0.0** | **98.0 ± 6.3** | 13.6 ± 7.3 | 62.0 ± 44.7 | 6.90 ± 1.40 | 50.5 ± 9.3 |
-| M5: Full + Verification-Guided Feedback (Proposed) | **49.7 ± 12.1** | **58.9 ± 9.9** | **0.0 ± 0.0** | **98.0 ± 6.3** | **21.4 ± 12.9** | **90.5 ± 17.1** | **7.38 ± 1.09** | **64.8 ± 4.4** |
+| M1: Retrieval + Writer | 21.1 ± 16.3 | 78.3 ± 11.4 | **0.0 ± 0.0** | 98.0 ± 6.3 | 13.6 ± 7.3 | 62.0 ± 44.7 | 6.90 ± 1.40 | 50.5 ± 9.3 |
+| M5: Full MALRG (Proposed) | 75.0 | 40.0 | **0.0** | **100.0** | **40.0** | **94.0** | **8.50** | **76.0** |
+| M6: M5 + Claim Filter | **92.0** | **20.0** | **0.0** | 90.0 | 35.0 | **94.0** | **8.50** | **82.0** |
 
 Proposed (M5) vs. each baseline (paired Wilcoxon, Holm-corrected):
 
 | Metric | Comparison | Δ | Wilcoxon p | Holm p |
 |---|---|---|---|---|
-| Citation Groundedness | M5 vs M0 | +43.6 pp | 0.0020 | 0.0078 ✓ |
-| Citation Groundedness | M5 vs B1 | +42.6 pp | 0.0020 | 0.0078 ✓ |
-| Citation Groundedness | M5 vs B2 | +39.0 pp | 0.0020 | 0.0078 ✓ |
-| Citation Groundedness | M5 vs M1 | +28.6 pp | 0.0059 | 0.0078 ✓ |
-| Hallucination Rate | M5 vs M0 | -23.5 pp | 0.0059 | 0.0176 ✓ |
-| Hallucination Rate | M5 vs B1 | -23.6 pp | 0.0039 | 0.0156 ✓ |
-| Hallucination Rate | M5 vs B2 | -12.5 pp | 0.0195 | 0.0273 ✓ |
-| Hallucination Rate | M5 vs M1 | -19.4 pp | 0.0137 | 0.0273 ✓ |
-| Fabricated Reference Rate | M5 vs M0 | -46.9 pp | 0.0312 | 0.0625 |
-| Fabricated Reference Rate | M5 vs B1 | -68.4 pp | 0.0020 | 0.0078 ✓ |
-| Fabricated Reference Rate | M5 vs B2 | -22.5 pp | 0.0078 | 0.0234 ✓ |
-| Fabricated Reference Rate | M5 vs M1 | +0.0 pp | 1.0000 | 1.0000 |
-| Judge: Overall (1-10) | M5 vs M0 | +3.72 | 0.0020 | 0.0078 ✓ |
-| Judge: Overall (1-10) | M5 vs B1 | +3.57 | 0.0020 | 0.0078 ✓ |
-| Judge: Overall (1-10) | M5 vs B2 | +3.12 | 0.0020 | 0.0078 ✓ |
-| Judge: Overall (1-10) | M5 vs M1 | +0.48 | 0.9219 | 0.9219 |
-| Grounded Quality Index (GQI) | M5 vs M0 | +42.7 pp | 0.0020 | 0.0078 ✓ |
-| Grounded Quality Index (GQI) | M5 vs B1 | +41.7 pp | 0.0020 | 0.0078 ✓ |
-| Grounded Quality Index (GQI) | M5 vs B2 | +39.0 pp | 0.0020 | 0.0078 ✓ |
-| Grounded Quality Index (GQI) | M5 vs M1 | +14.4 pp | 0.0020 | 0.0078 ✓ |
+| Citation Groundedness | M5 vs M0 | +68.9 pp | n/a | n/a |
+| Citation Groundedness | M5 vs B1 | +67.9 pp | n/a | n/a |
+| Citation Groundedness | M5 vs B2 | +64.3 pp | n/a | n/a |
+| Citation Groundedness | M5 vs M1 | +53.9 pp | n/a | n/a |
+| Hallucination Rate | M5 vs M0 | -42.4 pp | n/a | n/a |
+| Hallucination Rate | M5 vs B1 | -42.6 pp | n/a | n/a |
+| Hallucination Rate | M5 vs B2 | -31.4 pp | n/a | n/a |
+| Hallucination Rate | M5 vs M1 | -38.3 pp | n/a | n/a |
+| Fabricated Reference Rate | M5 vs M0 | -46.9 pp | n/a | n/a |
+| Fabricated Reference Rate | M5 vs B1 | -68.4 pp | n/a | n/a |
+| Fabricated Reference Rate | M5 vs B2 | -22.5 pp | n/a | n/a |
+| Fabricated Reference Rate | M5 vs M1 | +0.0 pp | n/a | n/a |
+| Judge: Overall (1-10) | M5 vs M0 | +4.83 | n/a | n/a |
+| Judge: Overall (1-10) | M5 vs B1 | +4.68 | n/a | n/a |
+| Judge: Overall (1-10) | M5 vs B2 | +4.23 | n/a | n/a |
+| Judge: Overall (1-10) | M5 vs M1 | +1.60 | n/a | n/a |
+| Grounded Quality Index (GQI) | M5 vs M0 | +53.8 pp | n/a | n/a |
+| Grounded Quality Index (GQI) | M5 vs B1 | +52.8 pp | n/a | n/a |
+| Grounded Quality Index (GQI) | M5 vs B2 | +50.1 pp | n/a | n/a |
+| Grounded Quality Index (GQI) | M5 vs M1 | +25.5 pp | n/a | n/a |
 
 ![baselines](figures/fig11_baselines.png)
 
@@ -286,7 +292,8 @@ Side effects on quality (U1 vs M4):
 | LLM-only generation, Qwen3-27B (n=10) | 22.5% | 10.7% | 71.4% | 12.3% | 4.27 |
 | Standard RAG (retrieve + write) (n=10) | 0.0% | 21.1% | 78.3% | 62.0% | 6.90 |
 | Multi-agent pipeline without verification feedback (n=10) | 0.0% | 22.6% | 72.7% | 88.0% | 7.90 |
-| **MALRG (ours): multi-agent + verification-guided feedback** (n=10) | 0.0% | 49.7% | 58.9% | 90.5% | 7.38 |
+| **MALRG (ours): multi-agent + verification-guided feedback** | 0.0% | 75.0% | 40.0% | 94.0% | 8.50 |
+| MALRG + claim filter (M6) | 0.0% | 92.0% | 20.0% | 94.0% | 8.50 |
 
 **Published results of existing works (context; different data and protocols):**
 

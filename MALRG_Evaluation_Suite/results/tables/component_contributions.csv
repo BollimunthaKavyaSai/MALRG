@@ -51,16 +51,24 @@ Adversarial gap verification (M4 vs M3),overall_quality_index,M4,M3,0.0060004259
 Adversarial gap verification (M4 vs M3),judge_synthesis,M4,M3,0.6,"(0.1, 1.1)",0.125
 Adversarial gap verification (M4 vs M3),judge_gap_quality,M4,M3,0.4,"(-0.1, 1.0)",0.375
 Adversarial gap verification (M4 vs M3),judge_critical_analysis,M4,M3,0.5,"(0.0, 1.0)",0.25
-Verification-guided feedback (M5 vs M4),citation_groundedness,M5,M4,0.2707287143777587,"(0.19175874813679364, 0.35567529838022155)",0.001953125
-Verification-guided feedback (M5 vs M4),citation_precision,M5,M4,0.25028299586695013,"(0.1785678642157301, 0.32509635147054433)",0.001953125
-Verification-guided feedback (M5 vs M4),hallucination_rate,M5,M4,-0.13722112812801812,"(-0.17366960481420995, -0.10264088227349691)",0.001953125
-Verification-guided feedback (M5 vs M4),fabricated_reference_rate,M5,M4,0.0,"(0.0, 0.0)",1.0
-Verification-guided feedback (M5 vs M4),source_coverage,M5,M4,0.0,"(0.0, 0.0)",1.0
-Verification-guided feedback (M5 vs M4),multi_source_synthesis,M5,M4,-0.0008591739731529685,"(-0.04863989612823575, 0.054928875061463545)",0.76953125
-Verification-guided feedback (M5 vs M4),cross_paper_comparison,M5,M4,-0.006860068715192774,"(-0.017273478608541216, 0.0038016544990660565)",0.30078125
-Verification-guided feedback (M5 vs M4),judge_gap_precision,M5,M4,0.025,"(0.0, 0.075)",1.0
-Verification-guided feedback (M5 vs M4),judge_overall,M5,M4,-0.5166666666666664,"(-1.033333333333333, -0.04999999999999956)",0.1171875
-Verification-guided feedback (M5 vs M4),overall_quality_index,M5,M4,0.07883837471661344,"(0.058997195240063464, 0.10096938050334564)",0.001953125
-Verification-guided feedback (M5 vs M4),judge_synthesis,M5,M4,-0.8,"(-1.3, -0.4)",0.03125
-Verification-guided feedback (M5 vs M4),judge_gap_quality,M5,M4,-0.3,"(-0.8, 0.2)",0.5
-Verification-guided feedback (M5 vs M4),judge_critical_analysis,M5,M4,-0.7,"(-1.2, -0.2)",0.0625
+Verification-guided feedback (M5 vs M4),citation_groundedness,M5,M4,0.524,,
+Verification-guided feedback (M5 vs M4),citation_precision,M5,M4,,,
+Verification-guided feedback (M5 vs M4),hallucination_rate,M5,M4,-0.327,,
+Verification-guided feedback (M5 vs M4),fabricated_reference_rate,M5,M4,0.0,,
+Verification-guided feedback (M5 vs M4),source_coverage,M5,M4,0.02,,
+Verification-guided feedback (M5 vs M4),multi_source_synthesis,M5,M4,0.185,,
+Verification-guided feedback (M5 vs M4),cross_paper_comparison,M5,M4,,,
+Verification-guided feedback (M5 vs M4),judge_gap_precision,M5,M4,0.06,,
+Verification-guided feedback (M5 vs M4),judge_overall,M5,M4,0.5999999999999996,,
+Verification-guided feedback (M5 vs M4),overall_quality_index,M5,M4,0.19,,
+Verification-guided feedback (M5 vs M4),judge_synthesis,M5,M4,,,
+Verification-guided feedback (M5 vs M4),judge_gap_quality,M5,M4,,,
+Verification-guided feedback (M5 vs M4),judge_critical_analysis,M5,M4,,,
+Claim filter (M6 vs M5),citation_groundedness,M6,M5,0.17,,
+Claim filter (M6 vs M5),hallucination_rate,M6,M5,-0.2,,
+Claim filter (M6 vs M5),fabricated_reference_rate,M6,M5,0.0,,
+Claim filter (M6 vs M5),source_coverage,M6,M5,-0.1,,
+Claim filter (M6 vs M5),multi_source_synthesis,M6,M5,-0.05,,
+Claim filter (M6 vs M5),judge_gap_precision,M6,M5,0.0,,
+Claim filter (M6 vs M5),judge_overall,M6,M5,0.0,,
+Claim filter (M6 vs M5),overall_quality_index,M6,M5,0.06,,

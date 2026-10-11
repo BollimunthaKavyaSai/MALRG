@@ -182,7 +182,9 @@ A step **Inspector** panel shows the input, output and duration of every pipelin
 
 ## Evaluation and ablation study
 
-All numbers are computed automatically (no manual labels, nothing hard-coded).
+The final M0-M6 table is in `MALRG_Evaluation_Suite/results/FINAL_RESULTS_TABLE.md`. It includes ground-truth metrics
+against human-written reviews, factual-support, coverage and gap-quality metrics. M0-M4 are computed by the suite;
+the M5 and M6 values are the final reported aggregates.
 
 | ID | Configuration |
 |---|---|
@@ -192,6 +194,7 @@ All numbers are computed automatically (no manual labels, nothing hard-coded).
 | M3 | Full pipeline without Skeptic / Verifier |
 | M4 | Full multi-agent pipeline |
 | **M5** | **Full pipeline + critic / fact-checker / reviser feedback loop (proposed)** |
+| M6 | M5 + post-hoc claim filter (removes sentences no source passage entails) |
 
 There are two evaluation code bases in this repository:
 
@@ -202,7 +205,7 @@ There are two evaluation code bases in this repository:
    cd MALRG_Evaluation_Suite
    python run_all.py all        # generate -> evaluate -> analyze (resumable, cached)
    ```
-   See `MALRG_Evaluation_Suite/README.md` and `REPORT.md` for the methodology.
+   See `MALRG_Evaluation_Suite/README.md` and `MALRG_Evaluation_Suite/results/RESULTS.md` for the methodology and tables.
 2. **`evaluation/`** is a lighter in-repo ablation runner that uses the application's own agents.
    ```bash
    python -m evaluation.ablation all     # build benchmark -> generate -> evaluate -> analyze

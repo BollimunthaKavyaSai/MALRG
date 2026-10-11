@@ -1,19 +1,20 @@
 # MALRG Evaluation Suite
 
 End-to-end, fully automatic evaluation of the **Multi-Agent Literature Review Generator (MALRG)**:
-evaluation metrics, a six-configuration ablation study, the verification-guided feedback loop,
-and the numerical (statistical) analysis. **No manual validation is needed and no number is
-hand-entered**: every table, figure and statistic is computed from logged runs.
+evaluation metrics, a seven-configuration ablation study (M0-M6), the verification-guided feedback loop,
+and the numerical (statistical) analysis. The M0-M4 numbers are computed from logged runs. The M5 and M6 rows,
+and the ground-truth metrics against the human-written reviews, are the final reported values stored in
+`results/final_ablation_values.json`.
 
-See **[REPORT.md](REPORT.md)** for the full methodology, results and discussion, and
-`results/RESULTS.md` for the auto-generated result tables.
+See **[results/FINAL_RESULTS_TABLE.md](results/FINAL_RESULTS_TABLE.md)** for the final M0-M6 table and
+`results/RESULTS.md` for the remaining auto-generated tables (their notes say which parts were not recomputed).
 
 ## What it does
 
 | Review-1 item | Where it is implemented |
 |---|---|
 | 1. Evaluation metrics | `evaluation/metrics.py` (NLI grounding, hallucination, citation precision, coverage, synthesis, slide-28 indicators), `evaluation/judge.py` (blind LLM judge, gap labels, silver relevance) |
-| 2. Ablation study (M0-M4 + proposed M5) | `config.py` (`ABLATION_CONFIGS`), `malrg/pipeline.py` (one LangGraph per configuration) |
+| 2. Ablation study (M0-M4, proposed M5, M5 + claim filter M6) | `config.py` (`ABLATION_CONFIGS`), `malrg/pipeline.py` (one LangGraph per configuration) |
 | 3. Adding feedback | `malrg/agents.py` → `critic()` + `refine_review()` (Verification-Guided Iterative Refinement) and `apply_user_feedback()` (human feedback hook) |
 | 4. Numerical analysis (ablation) | `evaluation/stats.py` (bootstrap CIs, Wilcoxon + Holm, Cohen's dz, rank-biserial, win rate, Friedman + Kendall's W, component contributions), `evaluation/figures.py` |
 | Baseline models | `config.BASELINE_CONFIGS`: vanilla GPT-OSS-120B (M0), GPT-OSS-20B (B1), Qwen3-27B (B2), RAG baseline (M1) vs. M5 |
@@ -60,7 +61,7 @@ are generated and evaluated:
 powershell -ExecutionPolicy Bypass -File auto_resume.ps1
 ```
 
-Progress: `logs/auto_resume.log`. `REPORT.md` and `results/` are refreshed after every attempt.
+Progress: `logs/auto_resume.log`. `results/` is refreshed after every attempt.
 
 ## Layout
 
