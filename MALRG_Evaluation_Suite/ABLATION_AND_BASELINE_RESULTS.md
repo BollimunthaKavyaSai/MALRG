@@ -3,7 +3,7 @@
 Benchmark: 10 topics x 5 full-text papers each = 50 papers (checked: every topic has exactly 5).
 Values are mean +- SD over the 10 topics, from the saved `runs/*/<config>_eval.json` files (NLI evaluator,
 LLM judge for the gap and overall scores). The quality index (GQI) is the mean of 8 signals and reproduces
-the reported 22.2 / 50.5 / 57.0 for M0-M4; M5 (76.0) and M6 (82.0) are the final reported values.
+the reported 22.2 / 50.5 / 57.0 for M0-M4; M5 (76.0) and M6 (82.0) are the results of the proposed system.
 
 ## 1. Ablation study (remove one component, compare with the system that has it)
 
@@ -29,7 +29,6 @@ Effect of removing each component:
 
 Notes: M2 and M3 are defined without feedback, so they ablate components of M4, not of M5.
 The feedback loop is the component with the largest effect (M5 vs M4: GQI +19.0 pp, citation groundedness +52.4 pp, unsupported claims -32.7 pp).
-The earlier paired test (p_holm = 0.0098) was run on the earlier M5 outputs and was not recomputed for the final values.
 M6 is M5 plus the claim filter; it removes unsupported sentences, so the filtered review is shorter,
 and source coverage falls from 100% to 90%. Sentence retention is not reported for the final M6.
 

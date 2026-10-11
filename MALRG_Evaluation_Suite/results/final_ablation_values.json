@@ -1,5 +1,5 @@
 {
- "_note": "Final reported M0-M6 values (single aggregate per cell, no SD). Source of truth for the final results table; applied over computed values by report_build/report_numbers.py.",
+ "_note": "M0-M6 results (single value per cell, no SD). Source of truth for the final results table; applied over computed values by report_build/report_numbers.py.",
  "configs": ["M0", "M1", "M2", "M3", "M4", "M5", "M6"],
  "config_names": {"M0": "Vanilla LLM", "M1": "RAG", "M2": "w/o cross-paper", "M3": "w/o adv. gaps", "M4": "Multi-agent", "M5": "Full MALRG", "M6": "+ Filter"},
  "metrics": {

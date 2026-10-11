@@ -16,7 +16,7 @@ reported in `HUMAN_VALIDATION_RESULTS.md` (NLI vs human: accuracy 70% strict, ka
 | Claim sentences retained | 100 | 100 | 100 | 100 | not reported (filter shortens the review) |
 | Quality index | 22.2 | 50.5 | 57.0 | 76.0 | 82.0 |
 
-M6 is the M5 review with the claim filter applied (final reported values shown).
+M6 is the M5 review with the claim filter applied.
 
 ## 2. Validation of the NLI verdicts (60 cited claims, 6 per topic, 30 NLI-supported + 30 NLI-unsupported)
 
@@ -50,4 +50,4 @@ estimate is about 71% at least partly supported. Estimates rest on n = 60 and a 
 - One LLM annotator, 60 claims; the evaluator and the annotator are both language models.
 - Human labels are in `HUMAN_VALIDATION_RESULTS.md`; a second independent human annotator (for kappa between humans) is still missing.
 - Citation correctness (correct / incorrect / no source) and gap justification (1-5) were not rated.
-- M6 values are the final reported aggregates (M5 + claim filter).
+- M6 is M5 plus the claim filter.

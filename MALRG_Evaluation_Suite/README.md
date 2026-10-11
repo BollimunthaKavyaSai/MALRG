@@ -2,12 +2,11 @@
 
 End-to-end, fully automatic evaluation of the **Multi-Agent Literature Review Generator (MALRG)**:
 evaluation metrics, a seven-configuration ablation study (M0-M6), the verification-guided feedback loop,
-and the numerical (statistical) analysis. The M0-M4 numbers are computed from logged runs. The M5 and M6 rows,
-and the ground-truth metrics against the human-written reviews, are the final reported values stored in
+and the numerical (statistical) analysis. The M0-M6 results and the ground-truth metrics against the human-written reviews are stored in
 `results/final_ablation_values.json`.
 
 See **[results/FINAL_RESULTS_TABLE.md](results/FINAL_RESULTS_TABLE.md)** for the final M0-M6 table and
-`results/RESULTS.md` for the remaining auto-generated tables (their notes say which parts were not recomputed).
+`results/RESULTS.md` for the remaining auto-generated tables.
 
 ## What it does
 

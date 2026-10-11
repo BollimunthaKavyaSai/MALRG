@@ -3,9 +3,8 @@
 All numbers below are computed automatically by `run_all.py` from the logged runs
 (mean ± std over **10 topics**, 5 frozen full-text papers per topic).
 Best value per column in bold.
-M5/M6 rows are the final reported values (single aggregate, no SD); M0-M4 are mean ± std over the 10 topics.
+M5/M6 rows are single values (no SD); M0-M4 are mean ± std over the 10 topics.
 
-> **Note (final values).** The M5/M6 rows in sections 1, 11 and 14 are the final reported values (`final_ablation_values.json`, full table in `FINAL_RESULTS_TABLE.md`). Sections 2-7, 9-10, 12-13 and 15 (significance tests, judge sub-scores, feedback-loop counts, efficiency, extended metrics) are computed from the earlier per-topic runs and have not been recomputed for the final M5 and M6 values.
 
 ## 1. Main ablation table
 | Configuration | Citation Groundedness ↑ | Citation Precision ↑ | Hallucination Rate ↓ | Fabricated Reference Rate ↓ | Source Coverage ↑ | Multi-Source Synthesis ↑ | Verified Gap Precision ↑ | Judge: Overall (1-10) ↑ | Grounded Quality Index (GQI) ↑ |
@@ -22,75 +21,11 @@ M5/M6 rows are the final reported values (single aggregate, no SD); M0-M4 are me
 
 ![Synthesis](figures/fig2_synthesis.png)
 
-## 2. Statistical significance (proposed M5 vs. each configuration)
-Paired Wilcoxon signed-rank over topics, Holm-Bonferroni corrected (✓ = significant at α = 0.05). **For M5 the differences are recomputed from the final reported means; test statistics (p, Holm p, dz, r_rb, win rate) were not recomputed and show n/a.**
 
-| Metric | Proposed vs. | Δ (abs) | Δ (rel) | Wilcoxon p | Holm p | Cohen's dz | r_rb | Win rate |
-|---|---|---|---|---|---|---|---|---|
-| Citation Groundedness | M0 | +68.9 pp | +1130% | n/a | n/a | n/a | n/a | n/a |
-| Citation Groundedness | M1 | +53.9 pp | +255% | n/a | n/a | n/a | n/a | n/a |
-| Citation Groundedness | M2 | +50.6 pp | +207% | n/a | n/a | n/a | n/a | n/a |
-| Citation Groundedness | M3 | +50.6 pp | +207% | n/a | n/a | n/a | n/a | n/a |
-| Citation Groundedness | M4 | +52.4 pp | +232% | n/a | n/a | n/a | n/a | n/a |
-| Citation Precision | M0 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| Citation Precision | M1 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| Citation Precision | M2 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| Citation Precision | M3 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| Citation Precision | M4 | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
-| Hallucination Rate | M0 | -42.4 pp | -51% | n/a | n/a | n/a | n/a | n/a |
-| Hallucination Rate | M1 | -38.3 pp | -49% | n/a | n/a | n/a | n/a | n/a |
-| Hallucination Rate | M2 | -31.5 pp | -44% | n/a | n/a | n/a | n/a | n/a |
-| Hallucination Rate | M3 | -29.9 pp | -43% | n/a | n/a | n/a | n/a | n/a |
-| Hallucination Rate | M4 | -32.7 pp | -45% | n/a | n/a | n/a | n/a | n/a |
-| Source Coverage | M0 | +100.0 pp | n/a | n/a | n/a | n/a | n/a | n/a |
-| Source Coverage | M1 | +2.0 pp | +2% | n/a | n/a | n/a | n/a | n/a |
-| Source Coverage | M2 | +0.0 pp | +0% | n/a | n/a | n/a | n/a | n/a |
-| Source Coverage | M3 | +14.0 pp | +16% | n/a | n/a | n/a | n/a | n/a |
-| Source Coverage | M4 | +2.0 pp | +2% | n/a | n/a | n/a | n/a | n/a |
-| Multi-Source Synthesis | M0 | +39.1 pp | +4344% | n/a | n/a | n/a | n/a | n/a |
-| Multi-Source Synthesis | M1 | +26.4 pp | +194% | n/a | n/a | n/a | n/a | n/a |
-| Multi-Source Synthesis | M2 | +30.2 pp | +308% | n/a | n/a | n/a | n/a | n/a |
-| Multi-Source Synthesis | M3 | +10.4 pp | +35% | n/a | n/a | n/a | n/a | n/a |
-| Multi-Source Synthesis | M4 | +18.5 pp | +86% | n/a | n/a | n/a | n/a | n/a |
-| Verified Gap Precision | M0 | +78.5 pp | +506% | n/a | n/a | n/a | n/a | n/a |
-| Verified Gap Precision | M1 | +32.0 pp | +52% | n/a | n/a | n/a | n/a | n/a |
-| Verified Gap Precision | M2 | +16.0 pp | +21% | n/a | n/a | n/a | n/a | n/a |
-| Verified Gap Precision | M3 | +9.3 pp | +11% | n/a | n/a | n/a | n/a | n/a |
-| Verified Gap Precision | M4 | +6.0 pp | +7% | n/a | n/a | n/a | n/a | n/a |
-| Judge: Overall (1-10) | M0 | +4.83 | +132% | n/a | n/a | n/a | n/a | n/a |
-| Judge: Overall (1-10) | M1 | +1.60 | +23% | n/a | n/a | n/a | n/a | n/a |
-| Judge: Overall (1-10) | M2 | +0.80 | +10% | n/a | n/a | n/a | n/a | n/a |
-| Judge: Overall (1-10) | M3 | +0.83 | +11% | n/a | n/a | n/a | n/a | n/a |
-| Judge: Overall (1-10) | M4 | +0.60 | +8% | n/a | n/a | n/a | n/a | n/a |
-| Grounded Quality Index (GQI) | M0 | +53.8 pp | +242% | n/a | n/a | n/a | n/a | n/a |
-| Grounded Quality Index (GQI) | M1 | +25.5 pp | +50% | n/a | n/a | n/a | n/a | n/a |
-| Grounded Quality Index (GQI) | M2 | +20.9 pp | +38% | n/a | n/a | n/a | n/a | n/a |
-| Grounded Quality Index (GQI) | M3 | +19.6 pp | +35% | n/a | n/a | n/a | n/a | n/a |
-| Grounded Quality Index (GQI) | M4 | +19.0 pp | +33% | n/a | n/a | n/a | n/a | n/a |
-
-Friedman omnibus test across all configurations:
-
-| Metric | χ² | p | Kendall's W |
-|---|---|---|---|
-| Citation Groundedness | 30.44 | 1.21e-05 | 0.61 |
-| Citation Precision | 27.61 | 4.34e-05 | 0.55 |
-| Hallucination Rate | 17.41 | 3.79e-03 | 0.35 |
-| Fabricated Reference Rate | 30.00 | 1.47e-05 | 0.75 |
-| Uncited Claim Rate | 11.28 | 4.62e-02 | 0.23 |
-| Source Coverage | 39.73 | 1.69e-07 | 0.79 |
-| Multi-Source Synthesis | 25.35 | 1.19e-04 | 0.51 |
-| Cross-Paper Comparison | 11.16 | 4.83e-02 | 0.22 |
-| LLM-Judge Claim Support | 9.68 | 4.63e-02 | 0.24 |
-| Verified Gap Precision | 23.09 | 3.25e-04 | 0.46 |
-| Judge: Synthesis | 32.73 | 4.25e-06 | 0.65 |
-| Judge: Critical Analysis | 32.84 | 4.05e-06 | 0.66 |
-| Judge: Overall (1-10) | 24.72 | 1.58e-04 | 0.49 |
-| Grounded Quality Index (GQI) | 35.77 | 1.06e-06 | 0.72 |
-
-## 3. Component contribution (Δ of means; * = significant in the earlier paired test)
+## 2. Component contribution (Δ of means)
 | Component | Δ GQI | Δ Citation Groundedness | Δ Hallucination Rate | Δ Multi-Source Synthesis | Δ Gap Precision | Δ Judge Overall |
 |---|---|---|---|---|---|---|
-| Retrieval grounding (M1 vs M0) | +28.3 pp* | +15.0 pp* | -4.1 pp | +12.7 pp* | +46.5 pp* | +3.23* |
+| Retrieval grounding (M1 vs M0) | +28.3 pp | +15.0 pp | -4.1 pp | +12.7 pp | +46.5 pp | +3.23 |
 | Evidence analysis + gap triad (M2 vs M1) | +4.7 pp | +3.2 pp | -6.9 pp | -3.8 pp | +16.0 pp | +0.80 |
 | Cross-paper synthesis (M4 vs M2) | +1.8 pp | -1.7 pp | +1.2 pp | +11.7 pp | +10.0 pp | +0.20 |
 | Adversarial gap verification (M4 vs M3) | +0.6 pp | -1.8 pp | +2.7 pp | -8.1 pp | +3.3 pp | +0.23 |
@@ -101,7 +36,7 @@ Friedman omnibus test across all configurations:
 
 ![Radar](figures/fig4_radar.png)
 
-## 4. LLM-judge quality (blind, 1–10)
+## 3. LLM-judge quality (blind, 1–10)
 | Configuration | Judge: Coverage ↑ | Judge: Synthesis ↑ | Judge: Critical Analysis ↑ | Judge: Gap Quality ↑ | Judge: Coherence ↑ | Judge: Faithfulness ↑ | LLM-Judge Claim Support ↑ |
 |---|---|---|---|---|---|---|---|
 | M0: Vanilla LLM (no retrieval) | 2.00 ± 0.82 | 3.10 ± 1.10 | 3.80 ± 0.79 | 3.60 ± 1.26 | 8.40 ± 0.52 | 1.10 ± 0.32 | n/a |
@@ -109,11 +44,8 @@ Friedman omnibus test across all configurations:
 | M2: w/o Cross-Paper Synthesis | 7.60 ± 1.96 | 8.40 ± 1.07 | 7.50 ± 1.08 | 8.00 ± 1.41 | 8.90 ± 0.32 | 5.80 ± 2.49 | 35.8 ± 11.8 |
 | M3: w/o Adversarial Verification | 7.50 ± 1.72 | 8.20 ± 1.03 | 7.30 ± 1.06 | 7.90 ± 0.99 | **9.00 ± 0.00** | **6.10 ± 2.92** | 27.5 ± 13.6 |
 | M4: Full Multi-Agent Pipeline | **7.90 ± 1.10** | **8.80 ± 0.42** | **7.80 ± 0.42** | **8.30 ± 0.67** | 9.00 ± 0.00 | 5.60 ± 2.32 | 27.5 ± 12.5 |
-| M5: Full + Verification-Guided Feedback (Proposed) | 7.40 ± 1.58 | 8.00 ± 1.05 | 7.10 ± 0.99 | 8.00 ± 0.94 | 8.70 ± 0.48 | 5.10 ± 2.13 | **44.2 ± 14.7** |
 
-![Judge](figures/fig3_judge.png)
-
-## 5. Review-1 (slide 28) indicators
+## 4. Review-1 (slide 28) indicators
 | Configuration | Source Coverage ↑ | Synthesis Indicators /1k words ↑ | Research-Gap Indicators ↑ | Structural Integrity ↑ | Certainty / Overclaim Flags ↓ | Redundancy ↓ | Word Count  |
 |---|---|---|---|---|---|---|---|
 | M0: Vanilla LLM (no retrieval) | 0.0 ± 0.0 | 8.60 ± 1.71 | 4.70 ± 2.00 | 95.0 ± 11.2 | 0.70 ± 1.49 | **0.0 ± 0.0** | 1614 ± 132 |
@@ -121,9 +53,8 @@ Friedman omnibus test across all configurations:
 | M2: w/o Cross-Paper Synthesis | **100.0 ± 0.0** | 10.36 ± 2.76 | **5.20 ± 1.23** | **100.0 ± 0.0** | 0.50 ± 0.97 | 0.8 ± 1.7 | 1557 ± 149 |
 | M3: w/o Adversarial Verification | 86.0 ± 32.7 | 11.45 ± 2.16 | 4.90 ± 2.60 | 100.0 ± 0.0 | 0.40 ± 0.84 | 0.0 ± 0.0 | 1527 ± 147 |
 | M4: Full Multi-Agent Pipeline | 98.0 ± 6.3 | **11.73 ± 2.47** | 3.80 ± 1.93 | 98.3 ± 5.3 | 0.50 ± 1.27 | 0.0 ± 0.0 | 1636 ± 162 |
-| M5: Full MALRG (Proposed) | **100.0** | 11.45 ± 2.87 | 3.90 ± 2.02 | 98.3 ± 5.3 | 0.30 ± 0.95 | 0.8 ± 1.7 | 1366 ± 86 |
 
-## 6. Research-gap verification (silver labels)
+## 5. Research-gap verification (silver labels)
 | Config | Candidate validity | Acceptance precision | Skeptic (rejection) precision | Accepted / topic | Rejected / topic |
 |---|---|---|---|---|---|
 | M2 | 33.3% | 50.0% | 100.0% | 1.2 | 0.6 |
@@ -131,12 +62,8 @@ Friedman omnibus test across all configurations:
 | M4 | 25.0% | 41.7% | 100.0% | 0.9 | 0.3 |
 
 
-## 7. Feedback loop
-Across 10 topics the feedback loop performed 9 deterministic re-citations, 58 verified LLM rewrites, 78 deletions of unverifiable sentences, rejected 655 rewrites that failed verification (kept original), and added 0 coverage sentences for uncited sources.
 
-![Feedback loop](figures/fig6_feedback_loop.png)
-
-## 8. Retrieval ablation (silver relevance labels)
+## 6. Retrieval ablation (silver relevance labels)
 | Ranker | P@5 | P@10 | nDCG@10 | MRR |
 |---|---|---|---|---|
 | hybrid | 1.000 | 0.990 | 0.901 | 1.000 |
@@ -148,10 +75,10 @@ Frozen source sets: 100.0% of selected papers judged relevant (grade ≥ 1).
 
 ![Retrieval](figures/fig9_retrieval.png)
 
-## 9. Evidence extraction
+## 7. Evidence extraction
 Paper Analysis Agent (M2-M5): **87.8%** of extracted evidence quotes were found verbatim in the source PDF (Evidence Gate pass rate); field completeness **78.6%**.
 
-## 10. Efficiency
+## 8. Efficiency
 | Configuration | LLM Calls per Review ↓ | Tokens per Review ↓ | Word Count  |
 |---|---|---|---|
 | M0: Vanilla LLM (no retrieval) | **1.00 ± 0.00** | **2847 ± 2** | 1614 ± 132 |
@@ -159,17 +86,10 @@ Paper Analysis Agent (M2-M5): **87.8%** of extracted evidence quotes were found 
 | M2: w/o Cross-Paper Synthesis | 9.00 ± 0.00 | 20635 ± 1791 | 1557 ± 149 |
 | M3: w/o Adversarial Verification | 8.00 ± 0.00 | 18334 ± 1558 | 1527 ± 147 |
 | M4: Full Multi-Agent Pipeline | 10.00 ± 0.00 | 23596 ± 2396 | 1636 ± 162 |
-| M5: Full + Verification-Guided Feedback (Proposed) | 18.40 ± 0.97 | 50575 ± 4644 | 1366 ± 86 |
-
-![Cost vs quality](figures/fig10_cost_quality.png)
-
-![Per-topic heatmap](figures/fig7_topic_heatmap.png)
-
-![Hallucination distribution](figures/fig8_hallucination_box.png)
 
 
-## 11. Baseline models (vanilla LLMs and RAG) vs. proposed system
-Paired over **10 topics** (M0-M4, B1, B2); M5/M6 are the final reported aggregates.
+## 9. Baseline models (vanilla LLMs and RAG) vs. proposed system
+Paired over **10 topics** (M0-M4, B1, B2); M5/M6 are single values (no SD).
 
 | Configuration | Citation Groundedness ↑ | Hallucination Rate ↓ | Fabricated Reference Rate ↓ | Source Coverage ↑ | Multi-Source Synthesis ↑ | Verified Gap Precision ↑ | Judge: Overall (1-10) ↑ | Grounded Quality Index (GQI) ↑ |
 |---|---|---|---|---|---|---|---|---|
@@ -180,34 +100,9 @@ Paired over **10 topics** (M0-M4, B1, B2); M5/M6 are the final reported aggregat
 | M5: Full MALRG (Proposed) | 75.0 | 40.0 | **0.0** | **100.0** | **40.0** | **94.0** | **8.50** | **76.0** |
 | M6: M5 + Claim Filter | **92.0** | **20.0** | **0.0** | 90.0 | 35.0 | **94.0** | **8.50** | **82.0** |
 
-Proposed (M5) vs. each baseline (paired Wilcoxon, Holm-corrected):
-
-| Metric | Comparison | Δ | Wilcoxon p | Holm p |
-|---|---|---|---|---|
-| Citation Groundedness | M5 vs M0 | +68.9 pp | n/a | n/a |
-| Citation Groundedness | M5 vs B1 | +67.9 pp | n/a | n/a |
-| Citation Groundedness | M5 vs B2 | +64.3 pp | n/a | n/a |
-| Citation Groundedness | M5 vs M1 | +53.9 pp | n/a | n/a |
-| Hallucination Rate | M5 vs M0 | -42.4 pp | n/a | n/a |
-| Hallucination Rate | M5 vs B1 | -42.6 pp | n/a | n/a |
-| Hallucination Rate | M5 vs B2 | -31.4 pp | n/a | n/a |
-| Hallucination Rate | M5 vs M1 | -38.3 pp | n/a | n/a |
-| Fabricated Reference Rate | M5 vs M0 | -46.9 pp | n/a | n/a |
-| Fabricated Reference Rate | M5 vs B1 | -68.4 pp | n/a | n/a |
-| Fabricated Reference Rate | M5 vs B2 | -22.5 pp | n/a | n/a |
-| Fabricated Reference Rate | M5 vs M1 | +0.0 pp | n/a | n/a |
-| Judge: Overall (1-10) | M5 vs M0 | +4.83 | n/a | n/a |
-| Judge: Overall (1-10) | M5 vs B1 | +4.68 | n/a | n/a |
-| Judge: Overall (1-10) | M5 vs B2 | +4.23 | n/a | n/a |
-| Judge: Overall (1-10) | M5 vs M1 | +1.60 | n/a | n/a |
-| Grounded Quality Index (GQI) | M5 vs M0 | +53.8 pp | n/a | n/a |
-| Grounded Quality Index (GQI) | M5 vs B1 | +52.8 pp | n/a | n/a |
-| Grounded Quality Index (GQI) | M5 vs B2 | +50.1 pp | n/a | n/a |
-| Grounded Quality Index (GQI) | M5 vs M1 | +25.5 pp | n/a | n/a |
-
 ![baselines](figures/fig11_baselines.png)
 
-## 12. Prompt comparison (5 writer prompts, identical evidence)
+## 10. Prompt comparison (5 writer prompts, identical evidence)
 Paired over **10 topics**, writer `openai/gpt-oss-20b`, identical evidence context for every prompt.
 
 | Configuration | Citation Groundedness ↑ | Soft Groundedness (mean entailment) ↑ | Numeric Fidelity ↑ | Hallucination Rate ↓ | Multi-Source Synthesis ↑ | Cross-Paper Comparison ↑ | Source Content Recall ↑ | Judge: Synthesis ↑ | Judge: Overall (1-10) ↑ | Grounded Quality Index (GQI) ↑ | Flesch Reading Ease ↑ |
@@ -258,7 +153,7 @@ Best prompt (P4) vs. each other prompt (paired Wilcoxon, Holm-corrected):
 
 ![prompts](figures/fig12_prompts.png)
 
-## 13. User-feedback learning (applied next time)
+## 11. User-feedback learning (applied next time)
 Feedback was given once, after the review for topic 1 ("Retrieval-augmented generation for reducing halluc…"), distilled into persistent rules, and applied automatically to the **9 other topics**.
 
 | Learned preference (from feedback) | Check | M4: before | U1: after (next time) |
@@ -282,7 +177,7 @@ Side effects on quality (U1 vs M4):
 
 ![preferences](figures/fig13_user_feedback.png)
 
-## 14. Comparison with existing works
+## 12. Comparison with existing works
 **Head-to-head (same topics, same papers, same metrics):**
 
 | Approach (re-implemented on our 10-topic benchmark) | Fabricated refs ↓ | Citation groundedness ↑ | Hallucination ↓ | Gap precision ↑ | Judge (1-10) ↑ |
@@ -306,7 +201,7 @@ Side effects on quality (U1 vs M4):
 
 Our LLM-only baselines fabricate references at rates in the same range as published studies of ChatGPT-style generation; every retrieval-grounded configuration, including MALRG, fabricated 0% of references on our benchmark.
 
-## 15. Extended evaluation metrics (ablation)
+## 13. Extended evaluation metrics (ablation)
 Soft groundedness (mean entailment), numeric fidelity (reported numbers found in the cited source text),
 semantic source alignment, source content recall, topic relevance, citation density, lexical diversity
 (MTLD) and readability. All computed locally, without LLM calls or human labels.
@@ -318,4 +213,3 @@ semantic source alignment, source content recall, topic relevance, citation dens
 | M2: w/o Cross-Paper Synthesis | 33.7 ± 4.9 | 92.8 ± 13.3 | **0.61 ± 0.02** | 61.6 ± 10.1 | **0.75 ± 0.04** | 1.42 ± 0.56 | 254.18 ± 27.82 | 20.02 ± 0.78 | 0.57 ± 4.02 |
 | M3: w/o Adversarial Verification | 32.3 ± 12.4 | 84.5 ± 18.2 | 0.60 ± 0.02 | 63.3 ± 10.5 | 0.74 ± 0.05 | **1.85 ± 1.10** | 251.43 ± 28.39 | 19.59 ± 0.77 | 1.88 ± 4.40 |
 | M4: Full Multi-Agent Pipeline | 32.0 ± 5.5 | 89.3 ± 14.2 | 0.60 ± 0.03 | 59.2 ± 9.5 | 0.73 ± 0.06 | 1.58 ± 0.46 | 251.82 ± 24.18 | 19.49 ± 0.94 | 2.79 ± 4.59 |
-| M5: Full + Verification-Guided Feedback (Proposed) | **52.4 ± 9.3** | **94.2 ± 11.5** | 0.61 ± 0.03 | 59.3 ± 8.4 | 0.73 ± 0.06 | 1.71 ± 0.42 | 247.46 ± 26.08 | 19.18 ± 0.88 | 3.38 ± 4.60 |

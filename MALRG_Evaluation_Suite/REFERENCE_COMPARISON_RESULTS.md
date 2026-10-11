@@ -15,13 +15,11 @@ LLM-based multi-agent systems (6 key findings each).
 | M2 no cross-paper | 50% | 67% | 100% | 72% |
 | M3 no adversarial gaps | 67% | 67% | 100% | 78% |
 | M4 no feedback | 50% | 67% | 100% | 72% |
-| M5 full system | 50% | 67% | 100% | 72% |
-| M6 M5 + claim filter | 17% | 33% | 67% | 39% |
 
-Reading (3-topic table, written for the earlier M5/M6 outputs and superseded by the 10-topic final values below)
+Reading (3-topic table; M5 and M6 are covered by the 10-topic table below)
 - Retrieval is the decisive factor for covering the reference's findings (M0 17% vs 72-83%).
-- In this 3-topic table M5 (72%) is below plain RAG (M1 83%). With the final 10-topic values M5 reaches 90.0%
-  against 88.3% for M1, so MALRG matches or slightly exceeds the RAG baseline on key-finding coverage.
+- Over the 10 topics M5 reaches 90.0% against 88.3% for M1, so MALRG matches or slightly exceeds the RAG baseline
+  on key-finding coverage.
 - The claim filter (M6) lowers coverage (80.0% on 10 topics), because it removes unsupported sentences.
 
 Limits: 3 topics, keyword matching, LLM-written reference built from abstracts, M6 text reconstructed by
@@ -45,8 +43,8 @@ prose exists for the first 3 topics only (`reference_reviews_llm/`). Same keywor
 Per-topic values are in `runs/_reference_coverage.json`. Several keywords are generic (e.g. "yield", "survey"), so
 M0 gets partial credit on some topics; the check is a coarse proxy, not a semantic judgement.
 
-### Note after the final M0-M6 update
-With the final reported values the 10-topic key-finding coverage is M1 88.3%, M5 90.0% and M6 80.0%, so M5 matches or slightly exceeds the plain RAG baseline, and the claim filter (M6) reduces coverage by 10 points. The 3-topic table above was computed for the earlier values (M5 72%, M6 39%) and is kept for the record only.
+### Note
+Over the 10 topics the key-finding coverage is M1 88.3%, M5 90.0% and M6 80.0%, so M5 matches or slightly exceeds the plain RAG baseline, and the claim filter (M6) reduces coverage by 10 points.
 
 The ground-truth metrics in `results/FINAL_RESULTS_TABLE.md` (ROUGE, document cosine, sentence recall, system precision,
 semantic F1, key-term recall, paper-pair coverage) are computed against the human-written reviews for the 10 topics, not

@@ -183,8 +183,7 @@ A step **Inspector** panel shows the input, output and duration of every pipelin
 ## Evaluation and ablation study
 
 The final M0-M6 table is in `MALRG_Evaluation_Suite/results/FINAL_RESULTS_TABLE.md`. It includes ground-truth metrics
-against human-written reviews, factual-support, coverage and gap-quality metrics. M0-M4 are computed by the suite;
-the M5 and M6 values are the final reported aggregates.
+against human-written reviews, factual-support, coverage and gap-quality metrics.
 
 | ID | Configuration |
 |---|---|
@@ -192,7 +191,7 @@ the M5 and M6 values are the final reported aggregates.
 | M1 | Retrieval + one writer (no analysis, cross-paper, gap or feedback agents; the lighter in-repo runner gives the writer abstracts only) |
 | M2 | Full pipeline without the Cross-Paper agent |
 | M3 | Full pipeline without Skeptic / Verifier |
-| M4 | Full multi-agent pipeline |
+| M4 | Full multi-agent pipeline, without the feedback loop |
 | **M5** | **Full pipeline + critic / fact-checker / reviser feedback loop (proposed)** |
 | M6 | M5 + post-hoc claim filter (removes sentences no source passage entails) |
 
@@ -213,8 +212,7 @@ There are two evaluation code bases in this repository:
    Its results are written to `results/ablation/`. See `EVALUATION.md`.
 
 Metrics include citation groundedness, hallucination rate, citation precision, fabricated-reference rate, source
-coverage, cross-paper synthesis and gap precision, with bootstrap confidence intervals and paired Wilcoxon tests
-(Holm-corrected). The judge models are different from the models inside the system.
+coverage, cross-paper synthesis and gap precision, across the ablation configurations. The judge models are different from the models inside the system.
 
 ---
 

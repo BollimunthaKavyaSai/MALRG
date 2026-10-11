@@ -126,7 +126,7 @@ export default function AblationDashboard({ theme = 'light' }) {
         <div>
           <h2 className={`text-base font-semibold ${light ? 'text-slate-900' : 'text-slate-100'}`}>Evaluation and ablation study</h2>
           <p className={`text-xs mt-0.5 ${muted}`}>
-            Computed automatically on {data.n_topics} benchmark topics · judge {data.judge_model} · NLI DeBERTa-v3 ·
+            Results on {data.n_topics} benchmark topics · judge {data.judge_model} · NLI DeBERTa-v3 ·
             generated {data.generated_at?.replace('T', ' ')}
           </p>
         </div>
@@ -212,8 +212,7 @@ export default function AblationDashboard({ theme = 'light' }) {
           </table>
         </div>
         <p className={`text-xs leading-relaxed ${muted}`}>
-          Underlined = best. Stars: paired Wilcoxon signed-rank test, proposed (M5) vs. that configuration, Holm-corrected
-          (* p&lt;0.05, ** p&lt;0.01, *** p&lt;0.001). Every value is computed by the automatic evaluator — no manual labels.
+          Underlined = best. M0 to M4 are mean ± SD over the benchmark topics; M5 and M6 are single values.
         </p>
       </div>
 

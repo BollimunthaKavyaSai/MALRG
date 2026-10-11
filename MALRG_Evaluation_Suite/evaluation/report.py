@@ -282,7 +282,8 @@ def build(topics, configs, log=print):
     results_md = results_markdown(results)
     (config.RESULTS_DIR / "RESULTS.md").write_text(results_md, encoding="utf-8")
     # full report = methodology + results (figure paths relative to the suite root)
-    method = (config.ROOT / "REPORT_METHODOLOGY.md").read_text(encoding="utf-8")
+    _meth = config.ROOT / "REPORT_METHODOLOGY.md"
+    method = _meth.read_text(encoding="utf-8") if _meth.exists() else "# MALRG evaluation report\n"
     body = results_md.replace("](figures/", "](results/figures/")
     body = re.sub(r"^## (\d+)\. ", lambda m: f"### 7.{m.group(1)} ", body, flags=re.M)
     body = body.replace("# MALRG Ablation Study — Results", "## 7. Results", 1)
@@ -342,7 +343,7 @@ def benchmark_json(sumdf, cfgs, n_topics, tests=None, contrib=None, gap_df=None)
                                                                       + g.loc["M4", "gj_n_accepted"]))
               if "M4" in g.index else None}
     charts = sorted(p.name for p in config.FIGURES_DIR.glob("*.png"))
-    out = {"available": True, "source": "MALRG_Evaluation_Suite (computed, not hand-entered)",
+    out = {"available": True, "source": "MALRG_Evaluation_Suite",
            "generated_at": time.strftime("%Y-%m-%dT%H:%M:%S"), "n_topics": n_topics,
            "papers_per_topic": config.PAPERS_PER_TOPIC, "judge_model": config.MODELS["judge"],
            "proposed": config.PROPOSED, "headline": primary[:6],

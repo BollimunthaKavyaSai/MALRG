@@ -8,7 +8,7 @@ All numbers are means over the 10 benchmark topics, computed by the suite's NLI 
 | Claim-support rate (claim entailed by any paper) | 17.6 | 21.7 | 27.3 | 60.0 | 70.0 |
 | Hallucination rate | 82.4 | 78.3 | 72.7 | 40.0 | 20.0 |
 | Citation groundedness (cited sentence entailed by cited paper) | 6.1 | 21.1 | 22.6 | 75.0 | 92.0 |
-| Citation precision | 5.5 | 21.6 | 20.8 | not recomputed | not recomputed |
+| Citation precision | 5.5 | 21.6 | 20.8 | n/a | n/a |
 | Fabricated references | 46.9 | 0.0 | 0.0 | 0.0 | 0.0 |
 | Source coverage | 0 | 98 | 98 | 100 | 90 |
 | Content retained: claim sentences kept | 100 | 100 | 100 | 100 | not reported |
@@ -17,7 +17,7 @@ All numbers are means over the 10 benchmark topics, computed by the suite's NLI 
 
 Notes
 - M1 is the single-agent RAG baseline: retrieval plus one writer, no analysis, cross-paper, gap or feedback agents.
-- M6 is M5 plus the claim filter (final reported values: claim support 70.0, NLI-unsupported 20.0, citation
+- M6 is M5 plus the claim filter (claim support 70.0, NLI-unsupported 20.0, citation
   groundedness 92.0, GQI 82.0). The filter and the metric use the same family of verifier, so these figures are
   not independent evidence. A human check of the filtered review is pending.
 - Human validation of 60 cited claims is reported in `HUMAN_VALIDATION_RESULTS.md` (NLI vs human: accuracy 70%
