@@ -2,6 +2,8 @@
 
 Values are the final reported aggregates (source: `results/final_ablation_values.json`).
 
+M0-M4 match the saved run outputs in `runs/`. The M5 and M6 rows and the ground-truth metrics are reported aggregates; they are not reproduced by the shipped run files (`runs/` holds M5 = 49.7 % citation groundedness, 58.9 % NLI-unsupported, GQI 64.8 %, and no M6 run). `evaluation/ground_truth_metrics.py` computes the ground-truth metrics from the saved reviews.
+
 | Group | Metric | M0 Vanilla LLM | M1 RAG | M2 w/o cross-paper | M3 w/o adv. gaps | M4 Multi-agent | M5 Full MALRG | M6 + Filter |
 |---|---|---|---|---|---|---|---|---|
 | Ground truth | ROUGE-1 F1 ↑ | 0.374 | 0.411 | 0.420 | 0.425 | 0.430 | 0.465 | 0.450 |
