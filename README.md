@@ -189,7 +189,7 @@ the M5 and M6 values are the final reported aggregates.
 | ID | Configuration |
 |---|---|
 | M0 | Vanilla LLM (single prompt, no retrieval) |
-| M1 | Retrieval + Writer (abstracts only) |
+| M1 | Retrieval + one writer (no analysis, cross-paper, gap or feedback agents; the lighter in-repo runner gives the writer abstracts only) |
 | M2 | Full pipeline without the Cross-Paper agent |
 | M3 | Full pipeline without Skeptic / Verifier |
 | M4 | Full multi-agent pipeline |
