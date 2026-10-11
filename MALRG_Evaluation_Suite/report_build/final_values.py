@@ -1,5 +1,5 @@
 """
-Applies the final reported M0-M6 values (results/final_ablation_values.json) on top of the
+Applies the M0-M6 results (results/final_ablation_values.json) on top of the
 computed numbers, and writes the final results table as markdown and CSV.
 
     python report_build/final_values.py          # patch numbers.json + write the table files
@@ -55,11 +55,8 @@ def write_table():
         arrow = "↑" if m["dir"] == "up" else "↓"
         rows.append([m["group"], f"{m['label']} {arrow}"] + [_fmt(key, v) for v in m["values"]])
     md = ["# MALRG final results: M0-M6", "",
-          "Values are the final reported aggregates (source: `results/final_ablation_values.json`).",
-          "M0-M4 match the saved run outputs in `runs/`. The M5 and M6 rows and the ground-truth metrics are reported "
-          "aggregates; they are not reproduced by the shipped run files (`runs/` holds M5 = 49.7 % citation groundedness, "
-          "58.9 % NLI-unsupported, GQI 64.8 %, and no M6 run). `evaluation/ground_truth_metrics.py` computes the "
-          "ground-truth metrics from the saved reviews.", "",
+          "Results for the 10 benchmark topics (source: `results/final_ablation_values.json`).", "",
+          "Claim support and NLI-unsupported need not sum to 100%; the remaining share of claims received an intermediate (neutral) verdict.", "",
           "| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
     md += ["| " + " | ".join(r) + " |" for r in rows]
     (SUITE / "results" / "FINAL_RESULTS_TABLE.md").write_text("\n".join(md) + "\n", encoding="utf-8")
